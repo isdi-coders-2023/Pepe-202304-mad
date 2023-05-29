@@ -12,8 +12,8 @@ export function Header() {
       <img
         src="../../public/background images/weirdlightsaber.jpg"
         alt="blue saber"
-        width={375}
-        height={50}
+        width={311}
+        height={20}
       />
     </header>
   );
