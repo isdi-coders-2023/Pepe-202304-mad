@@ -2,8 +2,10 @@ import { Character } from "../models/character";
 
 export class characterRepository {
   url: string;
+  localUrl: string;
   constructor() {
     this.url = "https://swapi.dev/api/people/";
+    this.localUrl = "http://localhost:3000/books/characters/";
   }
 
   async getAll() {
@@ -37,5 +39,30 @@ export class characterRepository {
       url: search.url,
     };
     return character;
+  }
+
+  async create(item: Character) {
+    const response = await fetch(this.localUrl, {
+      method: "POST",
+      body: JSON.stringify(item),
+      headers: { "Content-Type": "application/json" },
+    });
+    return response.json();
+  }
+
+  async update(id: Character["id"], item: Character) {
+    const response = await fetch(this.localUrl + id, {
+      method: "PATCH",
+      body: JSON.stringify(item),
+      headers: { "Content-Type": "application/json" },
+    });
+    return response.json();
+  }
+
+  async delete(id: Character["id"]) {
+    const response = await fetch(this.localUrl + id, {
+      method: "DELETE",
+    });
+    return response.ok;
   }
 }

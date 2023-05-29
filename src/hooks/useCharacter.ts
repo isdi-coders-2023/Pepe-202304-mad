@@ -2,70 +2,56 @@ import { useCallback, useEffect, useMemo, useReducer } from "react";
 import { Character } from "../models/character";
 import { characterRepository } from "../services/character.repository";
 import { consoleError } from "../services/errors";
-import { BooksState, bookReducer } from "../reducers/reducer";
-import * as ac from "../reducers/actions.creator";
+import { CharacterState, characterReducer } from "../reducer/reducer";
+import * as ac from "../reducer/actions.creator";
 
 export function useCharacters() {
   const initialState: CharacterState = {
-    Characters: [],
+    characters: [],
   };
-
-  // const [books, setBooks] = useState<Book[]>([]);
 
   const [characterState, dispatch] = useReducer(characterReducer, initialState);
 
-  // FLux (patron) -> Redux (patron + Librería)
-  // FLux (patron) ---------------------------------> Hooks: useReducer
-
-  const characterUrl = "http://localhost:3000/books/";
-
-  const repo: characterRepository<Book> = useMemo(
-    () => new characterRepository<Book>(bookUrl),
-    []
-  );
+  const repo = useMemo(() => new characterRepository(), []);
 
   const handleLoad = useCallback(async () => {
-    const loadedBooks = await repo.getAll();
-    //setBooks(loadedBooks);
-    dispatch(ac.loadBookAction(loadedBooks));
+    const loadedCharacter = await repo.getAll();
+    dispatch(ac.loadCharacterAction(loadedCharacter));
   }, [repo]);
 
   useEffect(() => {
     handleLoad();
   }, [handleLoad]);
 
-  const handleAdd = async (book: Omit<Book, "id">) => {
+  const handleAdd = async (character: Character) => {
     try {
-      const newBook = await repo.create(book);
-      // setBooks([...books, newBook]);
-      dispatch(ac.createBookAction(newBook));
+      const newCharacter = await repo.create(character);
+      dispatch(ac.createCharacterAction(newCharacter));
     } catch (error) {
       consoleError(error);
     }
   };
 
-  const handleUpdate = async (book: Book) => {
+  const handleUpdate = async (character: Character) => {
     try {
-      const updatedBook = await repo.update(book.id, book);
-      // setBooks(books.map((item) => (item.id === book.id ? updatedBook : item)));
-      dispatch(ac.updateBookAction(updatedBook));
+      const updatedCharacter = await repo.update(character.id, character);
+      dispatch(ac.updateCharacterAction(updatedCharacter));
     } catch (error) {
       consoleError(error);
     }
   };
 
-  const handleDelete = async (book: Book) => {
+  const handleDelete = async (character: Character) => {
     try {
-      await repo.delete(book.id);
-      // setBooks(books.filter((item) => item.id !== book.id));
-      dispatch(ac.deleteBookAction(book.id));
+      await repo.delete(character.id);
+      dispatch(ac.deleteCharacterAction(character.id));
     } catch (error) {
       consoleError(error);
     }
   };
 
   return {
-    books: booksState.books,
+    characters: characterState.characters,
     handleAdd,
     handleUpdate,
     handleDelete,
