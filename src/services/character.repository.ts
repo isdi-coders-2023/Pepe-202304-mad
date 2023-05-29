@@ -1,7 +1,8 @@
 import { Character } from "../models/character";
 
-export class ApiRepository {
-  constructor(public url: string) {
+export class characterRepository {
+  url: string;
+  constructor() {
     this.url = "https://swapi.dev/api/people/";
   }
 
@@ -12,7 +13,8 @@ export class ApiRepository {
       throw new Error(message);
     }
 
-    return response.json();
+    const characterList = await response.json();
+    return characterList.results;
   }
 
   async getCharacter(url: Character["url"]) {
