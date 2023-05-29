@@ -1,4 +1,3 @@
-import { NavBar } from "./components/nav.bar";
 export function App() {
   return (
     <>
@@ -6,3 +5,4 @@ export function App() {
     </>
   );
 }
+import { NavBar } from "./components/nav.bar";
