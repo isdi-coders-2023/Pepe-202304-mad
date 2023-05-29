@@ -1,3 +1,8 @@
+import { NavBar } from "./components/nav.bar";
 export function App() {
-  return <></>;
+  return (
+    <>
+      <NavBar></NavBar>
+    </>
+  );
 }
