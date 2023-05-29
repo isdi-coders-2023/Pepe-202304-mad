@@ -1,0 +1,21 @@
+.goback {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  width: fit-content;
+  background-color: #ffc500;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  opacity: 50%;
+
+  button {
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-size: 18px;
+  }
+
+  img {
+    background-color: #ffc500;
+  }
+}
