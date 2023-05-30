@@ -4,11 +4,10 @@ import { AppContext } from "../../context/app.context";
 import { CharacterCard } from "../charactercard/character.card";
 import styles from "./list.module.scss";
 
-export function List() {
-  const {
+export default function List() {
+const {
     characterContext: { characters },
   } = useContext(AppContext);
-
   return (
     <ul className={styles.list}>
       {characters.map((item) => (

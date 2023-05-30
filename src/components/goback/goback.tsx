@@ -1,6 +1,6 @@
 import styles from "./goback.module.scss";
 
-export function GoBack() {
+export default function GoBack() {
   const topFunction = () => {
     document.documentElement.scrollTop = 0;
   };
