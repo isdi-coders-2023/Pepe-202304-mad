@@ -3,13 +3,14 @@ export default function NavBar() {
     <>
       <nav className="nav-bar">
         <ul>
-          <li className="create-button"></li>
-          <button>Create</button>
-          <li className="favorite-button">
-            <button>Favorite</button>
+          <li>
+            <button className="create-button">Create</button>
           </li>
-          <li className="filter-button">
-            <select>
+          <li>
+            <button className="favorite-button">Favorite</button>
+          </li>
+          <li>
+            <select className="filter-button">
               <option value="film">Film</option>
               <option value="homeworld">Homeworld</option>
             </select>
