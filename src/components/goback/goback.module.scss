@@ -3,10 +3,9 @@
   justify-content: center;
   margin: 20px;
   width: fit-content;
-  background-color: #ffc500;
+  background-color: rgba(255, 196, 0, 0.5);
   border-radius: 20px;
-  padding: 5px 10px 5px 10px;
-  opacity: 50%;
+  padding-left: 5px;
 
   button {
     background-color: transparent;
@@ -16,6 +15,8 @@
   }
 
   img {
-    background-color: #ffc500;
+    background-color: rgba(255, 196, 0, 0.5);
+    border-radius: 20px;
+    rotate: 180deg;
   }
 }

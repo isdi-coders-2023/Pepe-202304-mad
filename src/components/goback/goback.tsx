@@ -1,9 +1,12 @@
 import styles from "./goback.module.scss";
 
 export default function GoBack() {
+  const topFunction = () => {
+    document.documentElement.scrollTop = 0;
+  };
   return (
-    <div className={styles.goback}>
-      <button>GO BACK</button>
+    <div className={styles.goback} onClick={topFunction}>
+      <button className="goback-button">GO BACK</button>
       <img
         src="buttons.images/Vector_down_arrow_link.svg.png"
         alt="arrow button"
