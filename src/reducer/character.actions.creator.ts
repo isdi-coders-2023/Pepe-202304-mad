@@ -1,5 +1,5 @@
 import { Character } from "../models/character";
-import { actionTypes } from "./actions.types";
+import { actionTypes } from "./character.actions.types";
 
 export type CharacterAction = {
   type: keyof typeof actionTypes;

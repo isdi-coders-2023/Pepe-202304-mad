@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useReducer } from "react";
 import { Character } from "../models/character";
 import { characterRepository } from "../services/character.repository";
 import { consoleError } from "../services/errors";
-import { CharacterState, characterReducer } from "../reducer/reducer";
-import * as ac from "../reducer/actions.creator";
+import { CharacterState, characterReducer } from "../reducer/character.reducer";
+import * as ac from "../reducer/character.actions.creator";
 
 export function useCharacters() {
   const initialState: CharacterState = {
