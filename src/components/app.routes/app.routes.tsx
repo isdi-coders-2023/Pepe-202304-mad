@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 const Header = lazy(() => import("../header/header"));
-const NavBar = lazy(() => import("../nav/nav.bar"));
+const NavBar = lazy(() => import("../nav.bar/nav.bar"));
 const List = lazy(() => import("../list/list"));
 const GoBack = lazy(() => import("../goback/goback"));
 
