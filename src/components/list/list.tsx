@@ -1,5 +1,5 @@
 import styles from "./list.module.scss";
-export function List() {
+export default function List() {
   return (
     <ul>
       <li className={styles.list}>
