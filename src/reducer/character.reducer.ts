@@ -1,6 +1,6 @@
 import { Character } from "../models/character";
-import { CharacterAction } from "./actions.creator";
-import { actionTypes } from "./actions.types";
+import { CharacterAction } from "./character.actions.creator";
+import { actionTypes } from "./character.actions.types";
 
 export type CharacterState = {
   characters: Character[];
