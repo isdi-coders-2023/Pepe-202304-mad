@@ -23,12 +23,13 @@ export class characterRepository {
     const response = await fetch(url);
     const search = await response.json();
     const character: Character = {
-      id: search.url.split("/")[5],
+      id: 0,
+      charIndex: search.url.split("/")[5],
       name: search.name,
       height: search.height,
       image:
         "https://starwars-visualguide.com/assets/img/characters/" +
-        search.url +
+        search.charIndex +
         ".jpg",
       mass: search.mass,
       hair_color: search.hair_color,
