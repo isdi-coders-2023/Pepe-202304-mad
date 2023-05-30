@@ -1,23 +1,25 @@
 .characters {
   margin-top: 20px;
 
-  .image-container {
-    background-color: rgba(255, 196, 0, 0.5);
+  div {
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .character-image {
+    img {
       border-radius: 40px;
+      height: 311px;
+      width: 233px;
     }
   }
 
-  div {
+  span {
     display: flex;
     flex-direction: column;
-
-    span {
-      text-align: center;
-      color: white;
-      font-size: 25px;
-      padding: 20px;
-    }
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
   }
 }

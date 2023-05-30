@@ -9,9 +9,8 @@ export function CharacterCard({ item }: PropsType) {
   return (
     <>
       <li key={item.name} className={styles.characters}>
-        <div className="image-container">
+        <div>
           <img
-            className="character-image"
             src={
               "https://starwars-visualguide.com/assets/img/characters/" +
               item.url.split("/")[5] +
@@ -19,9 +18,7 @@ export function CharacterCard({ item }: PropsType) {
             }
           />
         </div>
-        <div>
-          <span>{item.name}</span>
-        </div>
+        <span>{item.name}</span>
       </li>
     </>
   );
