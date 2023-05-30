@@ -17,9 +17,3 @@ export function List() {
     </ul>
   );
 }
-
-// <<li className={styles.list}>
-//   <div></div>
-// </li>
-// <li className={styles.name}>
-// </li>>

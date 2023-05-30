@@ -1,0 +1,23 @@
+.characters {
+  margin-top: 20px;
+
+  .image-container {
+    background-color: rgba(255, 196, 0, 0.5);
+
+    .character-image {
+      border-radius: 40px;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      text-align: center;
+      color: white;
+      font-size: 25px;
+      padding: 20px;
+    }
+  }
+}
