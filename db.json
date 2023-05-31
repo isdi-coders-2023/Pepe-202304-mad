@@ -3,14 +3,14 @@
     {
       "id": 4,
       "name": "alex",
-      "height": "456456",
+      "height": "23",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhXfSwtTp16YZyi5smFJCuAO0WCkUp9bhYCdpUwGRKQ&s",
-      "mass": "string",
-      "hair_color": "string",
-      "eye_color": "string",
-      "birth_year": "string",
-      "gender": "string",
-      "homeworld": "string",
+      "mass": "77",
+      "hair_color": "Blonde",
+      "eye_color": "Black",
+      "birth_year": "1994",
+      "gender": "Agender",
+      "homeworld": "Barcelona",
       "url": "string"
     }
   ]

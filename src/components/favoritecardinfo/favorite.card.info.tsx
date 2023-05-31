@@ -15,8 +15,8 @@ export default function CharacterInfo() {
         </div>
         <div>
           <span>Name: {currentCharacter?.name}</span>
-          <span>Height: {currentCharacter?.height}</span>
-          <span>Mass: {currentCharacter?.mass}</span>
+          <span>Height: {currentCharacter?.height} m</span>
+          <span>Mass: {currentCharacter?.mass} Kg</span>
           <span>Hair Color: {currentCharacter?.hair_color}</span>
           <span>Eye Color: {currentCharacter?.eye_color}</span>
           <span>Birth Year: {currentCharacter?.birth_year}</span>
