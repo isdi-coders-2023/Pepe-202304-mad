@@ -4,6 +4,8 @@ import { actionTypes } from "./character.actions.types";
 
 export type CharacterState = {
   characters: Character[];
+  next: string | null;
+  previous: string | null;
   currentCharacter: Character | null;
 };
 
@@ -11,11 +13,22 @@ export const characterReducer = (
   state: CharacterState,
   action: CharacterAction
 ) => {
-  let payload: Character[] | Character | number;
+  let payload: Character[] | Character | number | string | null;
   switch (action.type) {
     case actionTypes.load:
       payload = action.payload as Character[];
-      return { ...state, characters: payload };
+      return {
+        ...state,
+        characters: payload,
+      };
+
+    case actionTypes.next:
+      payload = action.payload as string | null;
+      return { ...state, next: payload };
+
+    case actionTypes.previous:
+      payload = action.payload as string | null;
+      return { ...state, previous: payload };
 
     case actionTypes.create:
       payload = action.payload as Character;

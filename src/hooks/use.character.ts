@@ -8,6 +8,8 @@ import * as ac from "../reducer/character.actions.creator";
 export function useCharacters() {
   const initialState: CharacterState = {
     characters: [],
+    next: "",
+    previous: "",
     currentCharacter: null,
   };
 
@@ -15,10 +17,16 @@ export function useCharacters() {
 
   const repo = useMemo(() => new characterRepository(), []);
 
-  const handleLoad = useCallback(async () => {
-    const loadedCharacter = await repo.getAll();
-    dispatch(ac.loadCharacterAction(loadedCharacter));
-  }, [repo]);
+  const handleLoad = useCallback(
+    async (url = "https://swapi.dev/api/people/?page=") => {
+      if (!url) return;
+      const loadedCharacters = await repo.getAll(url);
+      dispatch(ac.loadCharacterAction(loadedCharacters.results));
+      dispatch(ac.nextCharacterAction(loadedCharacters.next));
+      dispatch(ac.previousCharacterAction(loadedCharacters.previous));
+    },
+    [repo]
+  );
 
   const handleLoadOneChar = async (character: Character) => {
     const loadedCharacter = await repo.getCharacter(character.url);
@@ -26,7 +34,7 @@ export function useCharacters() {
   };
 
   useEffect(() => {
-    handleLoad();
+    handleLoad("https://swapi.dev/api/people/?page=");
   }, [handleLoad]);
 
   const handleAdd = async (character: Character) => {
@@ -59,6 +67,9 @@ export function useCharacters() {
   return {
     characters: characterState.characters,
     currentCharacter: characterState.currentCharacter,
+    next: characterState.next,
+    previous: characterState.previous,
+    handleLoad,
     handleAdd,
     handleUpdate,
     handleDelete,
