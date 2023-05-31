@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./header.module.scss";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleReturnHome = () => {
+    navigate("/");
+  };
+
   return (
     <header className={styles.header}>
       <img
@@ -8,6 +15,7 @@ export default function Header() {
         alt="Logo Star Wars"
         width={311}
         height={144}
+        onClick={handleReturnHome}
       />
       <img
         src="/background.images/weirdlightsaber.jpg"
