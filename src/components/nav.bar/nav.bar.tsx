@@ -3,27 +3,34 @@ export default function NavBar() {
   return (
     <>
       <nav className={styles.navBar}>
-        <div className="create-button">
+        <div className={styles.createButton}>
           <img
             src="buttons.images/create_corasonsito.png"
             alt="lovely stromtrooper"
           />
-          <button>Create</button>
+          <button>CREATE</button>
         </div>
-        <div className="favorite--button">
+        <div className={styles.favoriteButton}>
           <img
             src="buttons.images/R2D2_corasonsito.png"
             alt="lovely Arturito"
           />
 
-          <button>Favorite</button>
+          <button>FAVORITE</button>
         </div>
-        <div className="navBar-rectangle">
-          <select className="filter-button">
-            <option value="">Filter</option>
-            <option value="film">Film</option>
-            <option value="homeworld">Homeworld</option>
+        <div className={styles.navRectangle}>
+          <select className={styles.filterButton}>
+            <option value="">FILTER</option>
+            <option value="film">FILMS</option>
+            <option value="homeworld">HOMEWORLD</option>
           </select>
+          <img
+            className={styles.filterArrow}
+            src="buttons.images/Vector_down_arrow_link.svg.png"
+            alt="arrow button"
+            width={45}
+            height={31}
+          />
         </div>
       </nav>
     </>
