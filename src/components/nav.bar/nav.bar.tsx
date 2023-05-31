@@ -24,20 +24,6 @@ export default function NavBar() {
             <button>FAVORITE</button>
           </div>
         </div>
-        <div className={styles.separator}>
-          <div className={styles.navRectangle}>
-            <select className={styles.filterButton}>
-              <option value="">FILTER</option>
-            </select>
-            <img
-              className={styles.filterArrow}
-              src="buttons.images/Vector_down_arrow_link.svg.png"
-              alt="arrow button"
-              width={54.73}
-              height={41.73}
-            />
-          </div>
-        </div>
       </nav>
     </>
   );
