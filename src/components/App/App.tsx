@@ -1,3 +1,4 @@
+import ChangePage from "../change.page/change.page";
 import GoBack from "../goback/goback";
 import Header from "../header/header";
 import List from "../list/list";
@@ -10,6 +11,7 @@ export function App() {
       <Header></Header>
       <NavBar></NavBar>
       <List></List>
+      <ChangePage></ChangePage>
       <GoBack></GoBack>
     </div>
   );
