@@ -13,6 +13,13 @@ export function loadCharacterAction(payload: Character[]): CharacterAction {
   };
 }
 
+export function loadSingleCharacterAction(payload: Character): CharacterAction {
+  return {
+    type: actionTypes.loadOne as keyof typeof actionTypes,
+    payload,
+  };
+}
+
 export function deleteCharacterAction(payload: number) {
   return {
     type: actionTypes.delete as keyof typeof actionTypes,
