@@ -6,4 +6,5 @@ export const actionTypes = {
   loadOne: "characters@loadOne",
   next: "characters@next",
   previous: "characters@previous",
+  loadLocal: "characters@loadLocal",
 };

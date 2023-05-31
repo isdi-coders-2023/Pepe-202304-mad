@@ -4,7 +4,7 @@ import { ApiResponse } from "./types";
 export class characterRepository {
   localUrl: string;
   constructor() {
-    this.localUrl = "http://localhost:3000/books/characters/";
+    this.localUrl = "http://localhost:3000/characters/";
   }
 
   async getAll(url: string) {
@@ -17,6 +17,18 @@ export class characterRepository {
     const characterList = await response.json();
 
     return characterList as ApiResponse;
+  }
+
+  async getAllLocalFavorites() {
+    const response = await fetch(this.localUrl);
+    if (!response.ok) {
+      const message = `Error: ${response.status}. ${response.statusText}`;
+      throw new Error(message);
+    }
+
+    const characterList = await response.json();
+
+    return characterList as Character[];
   }
 
   async getCharacter(url: Character["url"]) {

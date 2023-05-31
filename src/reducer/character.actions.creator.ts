@@ -13,6 +13,15 @@ export function loadCharacterAction(payload: Character[]): CharacterAction {
   };
 }
 
+export function loadLocalCharacterAction(
+  payload: Character[]
+): CharacterAction {
+  return {
+    type: actionTypes.loadLocal,
+    payload,
+  };
+}
+
 export function nextCharacterAction(
   payload: string | undefined
 ): CharacterAction {

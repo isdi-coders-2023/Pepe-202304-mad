@@ -7,6 +7,7 @@ export type CharacterState = {
   next: string | undefined;
   previous: string | undefined;
   currentCharacter: Character | null;
+  favoriteCharacters: Character[];
 };
 
 export const characterReducer = (
@@ -20,6 +21,13 @@ export const characterReducer = (
       return {
         ...state,
         characters: payload,
+      };
+
+    case actionTypes.loadLocal:
+      payload = action.payload as Character[];
+      return {
+        ...state,
+        favoriteCharacters: payload,
       };
 
     case actionTypes.next:
