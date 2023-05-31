@@ -4,7 +4,7 @@ import { ApiResponse } from "./types";
 export class characterRepository {
   localUrl: string;
   constructor() {
-    this.localUrl = "http://localhost:3000/books/characters/";
+    this.localUrl = "http://localhost:3000/characters/";
   }
 
   async getAll(url: string) {
@@ -17,6 +17,18 @@ export class characterRepository {
     const characterList = await response.json();
 
     return characterList as ApiResponse;
+  }
+
+  async getAllLocalFavorites() {
+    const response = await fetch(this.localUrl);
+    if (!response.ok) {
+      const message = `Error: ${response.status}. ${response.statusText}`;
+      throw new Error(message);
+    }
+
+    const characterList = await response.json();
+
+    return characterList as Character[];
   }
 
   async getCharacter(url: Character["url"]) {
@@ -40,6 +52,26 @@ export class characterRepository {
       birth_year: search.birth_year,
       gender: search.gender,
       homeworld: homeworldData.name,
+      url: search.url,
+    };
+    return character as Character;
+  }
+
+  async getFavoriteCharacter(id: number) {
+    const response = await fetch(`http://localhost:3000/characters/${id}`);
+    const search = await response.json();
+
+    const character: Character = {
+      id: search.id,
+      name: search.name,
+      height: search.height,
+      image: search.image,
+      mass: search.mass,
+      hair_color: search.hair_color,
+      eye_color: search.eye_color,
+      birth_year: search.birth_year,
+      gender: search.gender,
+      homeworld: search.homeworld,
       url: search.url,
     };
     return character as Character;

@@ -1,5 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./nav.bar.module.scss";
 export default function NavBar() {
+  const navigate = useNavigate();
+
+  function navigateToFavoriteCharacters() {
+    navigate("/favorite-character");
+  }
+
   return (
     <>
       <nav className={styles.navBar}>
@@ -19,9 +26,10 @@ export default function NavBar() {
               width={99.69}
               src="buttons.images/R2D2_corasonsito.png"
               alt="lovely Arturito"
+              onClick={navigateToFavoriteCharacters}
             />
 
-            <button>FAVORITE</button>
+            <button>FAVORITES</button>
           </div>
         </div>
       </nav>

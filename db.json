@@ -1,9 +1,17 @@
 {
   "characters": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 4,
+      "name": "alex",
+      "height": "456456",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhXfSwtTp16YZyi5smFJCuAO0WCkUp9bhYCdpUwGRKQ&s",
+      "mass": "string",
+      "hair_color": "string",
+      "eye_color": "string",
+      "birth_year": "string",
+      "gender": "string",
+      "homeworld": "string",
+      "url": "string"
     }
   ]
 }

@@ -11,6 +11,7 @@ export function useCharacters() {
     next: "",
     previous: "",
     currentCharacter: null,
+    favoriteCharacters: [],
   };
 
   const [characterState, dispatch] = useReducer(characterReducer, initialState);
@@ -36,6 +37,20 @@ export function useCharacters() {
   useEffect(() => {
     handleLoad("https://swapi.dev/api/people/?page=");
   }, [handleLoad]);
+
+  const handleLoadLocalServer = useCallback(async () => {
+    const loadedCharacters = await repo.getAllLocalFavorites();
+    dispatch(ac.loadLocalCharacterAction(loadedCharacters));
+  }, [repo]);
+
+  useEffect(() => {
+    handleLoadLocalServer();
+  }, [handleLoadLocalServer]);
+
+  const handleLoadOneFavoriteChar = async (character: Character) => {
+    const loadedCharacter = await repo.getFavoriteCharacter(character.id);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
 
   const handleAdd = async (character: Character) => {
     try {
@@ -69,10 +84,12 @@ export function useCharacters() {
     currentCharacter: characterState.currentCharacter,
     next: characterState.next,
     previous: characterState.previous,
+    favoriteCharacters: characterState.favoriteCharacters,
     handleLoad,
     handleAdd,
     handleUpdate,
     handleDelete,
     handleLoadOneChar,
+    handleLoadOneFavoriteChar,
   };
 }
