@@ -11,6 +11,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <img
+        className={styles.try}
         src="/background.images/Star-Wars-Logo.png"
         alt="Logo Star Wars"
         width={311}
