@@ -22,6 +22,10 @@ export class characterRepository {
   async getCharacter(url: Character["url"]) {
     const response = await fetch(url);
     const search = await response.json();
+
+    const homeworldResponse = await fetch(search.homeworld);
+    const homeworldData = await homeworldResponse.json();
+
     const character: Character = {
       id: Number(search.url.split("/")[5]),
       name: search.name,
@@ -35,7 +39,7 @@ export class characterRepository {
       eye_color: search.eye_color,
       birth_year: search.birth_year,
       gender: search.gender,
-      homeworld: search.homeworld,
+      homeworld: homeworldData.name,
       url: search.url,
     };
     return character;

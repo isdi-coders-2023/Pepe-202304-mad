@@ -14,15 +14,14 @@ export default function CharacterInfo() {
           <img src={currentCharacter?.image} alt="" />
         </div>
         <div>
-          <span>Name: {currentCharacter?.eye_color}</span>
-          <span>Height: {currentCharacter?.image}</span>
-          <span>Mass: {currentCharacter?.name}</span>
-          <span>Hair Color: {currentCharacter?.name}</span>
-          <span>Eye Color: {currentCharacter?.name}</span>
-          <span>Birth Year: {currentCharacter?.name}</span>
-          <span>Gender: </span>
-          <span>Home World: </span>
-          <span>Films: </span>
+          <span>Name: {currentCharacter?.name}</span>
+          <span>Height: {currentCharacter?.height}</span>
+          <span>Mass: {currentCharacter?.mass}</span>
+          <span>Hair Color: {currentCharacter?.hair_color}</span>
+          <span>Eye Color: {currentCharacter?.eye_color}</span>
+          <span>Birth Year: {currentCharacter?.birth_year}</span>
+          <span>Gender: {currentCharacter?.gender}</span>
+          <span>Home World: {currentCharacter?.homeworld}</span>
         </div>
       </section>
     </>
