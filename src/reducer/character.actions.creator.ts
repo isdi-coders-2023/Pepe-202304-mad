@@ -3,7 +3,7 @@ import { actionTypes } from "./character.actions.types";
 
 export type CharacterAction = {
   type: string;
-  payload: Character[] | Character | number | string | null;
+  payload: Character[] | Character | number | string | undefined;
 };
 
 export function loadCharacterAction(payload: Character[]): CharacterAction {
@@ -13,7 +13,9 @@ export function loadCharacterAction(payload: Character[]): CharacterAction {
   };
 }
 
-export function nextCharacterAction(payload: string | null): CharacterAction {
+export function nextCharacterAction(
+  payload: string | undefined
+): CharacterAction {
   return {
     type: actionTypes.next,
     payload,
@@ -21,7 +23,7 @@ export function nextCharacterAction(payload: string | null): CharacterAction {
 }
 
 export function previousCharacterAction(
-  payload: string | null
+  payload: string | undefined
 ): CharacterAction {
   return {
     type: actionTypes.previous,
