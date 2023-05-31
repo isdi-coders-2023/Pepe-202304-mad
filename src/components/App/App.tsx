@@ -1,7 +1,7 @@
-import { GoBack } from "../goback/goback";
-import { Header } from "../header/header";
-import { List } from "../list/list";
-import { NavBar } from "../nav/nav.bar";
+import GoBack from "../goback/goback";
+import Header from "../header/header";
+import List from "../list/list";
+import NavBar from "../nav/nav.bar";
 import styles from "./App.module.scss";
 
 export function App() {
