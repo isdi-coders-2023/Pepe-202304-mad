@@ -3,36 +3,38 @@ export default function NavBar() {
   return (
     <>
       <nav className={styles.navBar}>
-        <div className={styles.createButton}>
-          <img
-            height={96.63}
-            width={99.69}
-            src="buttons.images/create_corasonsito.png"
-            alt="lovely stromtrooper"
-          />
-          <button>CREATE</button>
-        </div>
-        <div className={styles.favoriteButton}>
-          <img
-            src="buttons.images/R2D2_corasonsito.png"
-            alt="lovely Arturito"
-          />
+        <div className={styles.buttons}>
+          <div className={styles.button}>
+            <img
+              height={96.63}
+              width={99.69}
+              src="buttons.images/create_corasonsito.png"
+              alt="lovely stromtrooper"
+            />
+            <button>CREATE</button>
+          </div>
+          <div className={styles.button}>
+            <img
+              height={96.63}
+              width={99.69}
+              src="buttons.images/R2D2_corasonsito.png"
+              alt="lovely Arturito"
+            />
 
-          <button>FAVORITE</button>
+            <button>FAVORITE</button>
+          </div>
         </div>
         <div className={styles.separator}>
           <div className={styles.navRectangle}>
             <select className={styles.filterButton}>
               <option value="">FILTER</option>
-              <option value="film">FILMS</option>
-              <option value="homeworld">HOMEWORLD</option>
             </select>
             <img
               className={styles.filterArrow}
               src="buttons.images/Vector_down_arrow_link.svg.png"
               alt="arrow button"
-              width={45}
-              height={31}
+              width={54.73}
+              height={41.73}
             />
           </div>
         </div>
