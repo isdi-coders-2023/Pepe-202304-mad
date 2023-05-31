@@ -1,0 +1,22 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  .droidsImage {
+    margin-top: 18px;
+  }
+
+  p {
+    font-size: 24px;
+    padding: 4px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+
+  span {
+    margin-top: 50px;
+    font-size: 36px;
+  }
+}
