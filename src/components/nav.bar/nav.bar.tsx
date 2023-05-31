@@ -1,21 +1,41 @@
+import styles from "./nav.bar.module.scss";
 export default function NavBar() {
   return (
     <>
-      <nav className="nav-bar">
-        <ul>
-          <li>
-            <button className="create-button">Create</button>
-          </li>
-          <li>
-            <button className="favorite-button">Favorite</button>
-          </li>
-          <li>
-            <select className="filter-button">
-              <option value="film">Film</option>
-              <option value="homeworld">Homeworld</option>
+      <nav className={styles.navBar}>
+        <div className={styles.createButton}>
+          <img
+            height={96.63}
+            width={99.69}
+            src="buttons.images/create_corasonsito.png"
+            alt="lovely stromtrooper"
+          />
+          <button>CREATE</button>
+        </div>
+        <div className={styles.favoriteButton}>
+          <img
+            src="buttons.images/R2D2_corasonsito.png"
+            alt="lovely Arturito"
+          />
+
+          <button>FAVORITE</button>
+        </div>
+        <div className={styles.separator}>
+          <div className={styles.navRectangle}>
+            <select className={styles.filterButton}>
+              <option value="">FILTER</option>
+              <option value="film">FILMS</option>
+              <option value="homeworld">HOMEWORLD</option>
             </select>
-          </li>
-        </ul>
+            <img
+              className={styles.filterArrow}
+              src="buttons.images/Vector_down_arrow_link.svg.png"
+              alt="arrow button"
+              width={45}
+              height={31}
+            />
+          </div>
+        </div>
       </nav>
     </>
   );

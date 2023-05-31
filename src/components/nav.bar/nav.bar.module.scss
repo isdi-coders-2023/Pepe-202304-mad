@@ -1,0 +1,51 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  button {
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .createButton {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .favoriteButton {
+    display: flex;
+    flex-direction: column;
+  }
+  .separator {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    .navRectangle {
+      background-color: rgba(255, 196, 0, 0.5);
+      border-radius: 40px;
+      width: 321.12px;
+      height: 41.73px;
+      align-items: center;
+    }
+
+    .filterButton {
+      background-color: transparent;
+      border: 0px;
+      width: fit-content;
+      color: white;
+      font-size: 18px;
+      padding: 8px;
+    }
+
+    .filterArrow {
+      background-color: #dfac00;
+      border-radius: 40px;
+      margin-left: 116px;
+      margin-top: 5px;
+    }
+  }
+}
