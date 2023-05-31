@@ -1,19 +1,18 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const Header = lazy(() => import("../header/header"));
-const NavBar = lazy(() => import("../nav.bar/nav.bar"));
 const List = lazy(() => import("../list/list"));
-const GoBack = lazy(() => import("../goback/goback"));
+const CharacterInfo = lazy(() => import("../characterInfo/character.info"));
 
 export function AppRoutes() {
   return (
     <Suspense>
       <Routes>
-        <Route path="header" element={<Header></Header>}></Route>
-        <Route path="navBar" element={<NavBar></NavBar>}></Route>
-        <Route path="list" element={<List></List>}></Route>
-        <Route path="goBack" element={<GoBack></GoBack>}></Route>
+        <Route path="/" element={<List></List>}></Route>
+        <Route
+          path="/character-info"
+          element={<CharacterInfo></CharacterInfo>}
+        ></Route>
       </Routes>
     </Suspense>
   );

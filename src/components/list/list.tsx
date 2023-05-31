@@ -5,9 +5,10 @@ import { CharacterCard } from "../charactercard/character.card";
 import styles from "./list.module.scss";
 
 export default function List() {
-const {
+  const {
     characterContext: { characters },
   } = useContext(AppContext);
+
   return (
     <ul className={styles.list}>
       {characters.map((item) => (

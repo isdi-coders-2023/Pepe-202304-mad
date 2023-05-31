@@ -4,6 +4,7 @@ import { actionTypes } from "./character.actions.types";
 
 export type CharacterState = {
   characters: Character[];
+  currentCharacter: Character | null;
 };
 
 export const characterReducer = (
@@ -28,6 +29,10 @@ export const characterReducer = (
           item.id === (payload as Character).id ? (payload as Character) : item
         ),
       };
+
+    case actionTypes.loadOne:
+      payload = action.payload as Character;
+      return { ...state, currentCharacter: payload };
 
     case actionTypes.delete:
       payload = action.payload as number;

@@ -4,7 +4,7 @@ export class characterRepository {
   url: string;
   localUrl: string;
   constructor() {
-    this.url = "https://swapi.dev/api/people/";
+    this.url = "https://swapi.dev/api/people/?page2";
     this.localUrl = "http://localhost:3000/books/characters/";
   }
 
@@ -22,21 +22,24 @@ export class characterRepository {
   async getCharacter(url: Character["url"]) {
     const response = await fetch(url);
     const search = await response.json();
+
+    const homeworldResponse = await fetch(search.homeworld);
+    const homeworldData = await homeworldResponse.json();
+
     const character: Character = {
-      id: 0,
-      charIndex: search.url.split("/")[5],
+      id: Number(search.url.split("/")[5]),
       name: search.name,
       height: search.height,
       image:
         "https://starwars-visualguide.com/assets/img/characters/" +
-        search.charIndex +
+        search.url.split("/")[5] +
         ".jpg",
       mass: search.mass,
       hair_color: search.hair_color,
       eye_color: search.eye_color,
       birth_year: search.birth_year,
       gender: search.gender,
-      homeworld: search.homeworld,
+      homeworld: homeworldData.name,
       url: search.url,
     };
     return character;

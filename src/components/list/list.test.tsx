@@ -5,7 +5,7 @@ import { Character } from "../../models/character";
 import { AppContext, ContextStructure } from "../../context/app.context";
 
 describe("Given List component", () => {
-  const characters = [] as Character[];
+  const characters = [{}] as Character[];
 
   const value: ContextStructure = {
     characterContext: {
