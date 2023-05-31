@@ -1,22 +1,22 @@
 import { Character } from "../models/character";
+import { ApiResponse } from "./types";
 
 export class characterRepository {
-  url: string;
   localUrl: string;
   constructor() {
-    this.url = "https://swapi.dev/api/people/";
     this.localUrl = "http://localhost:3000/books/characters/";
   }
 
-  async getAll() {
-    const response = await fetch(this.url);
+  async getAll(url: string) {
+    const response = await fetch(url);
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
     }
 
     const characterList = await response.json();
-    return characterList.results;
+
+    return characterList as ApiResponse;
   }
 
   async getCharacter(url: Character["url"]) {
@@ -42,7 +42,7 @@ export class characterRepository {
       homeworld: homeworldData.name,
       url: search.url,
     };
-    return character;
+    return character as Character;
   }
 
   async create(item: Character) {

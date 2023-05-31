@@ -4,4 +4,6 @@ export const actionTypes = {
   create: "characters@create",
   update: "characters@update",
   loadOne: "characters@loadOne",
+  next: "characters@next",
+  previous: "characters@previous",
 };
