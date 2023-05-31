@@ -28,7 +28,7 @@ export class characterRepository {
       height: search.height,
       image:
         "https://starwars-visualguide.com/assets/img/characters/" +
-        search.id +
+        search.url.split("/")[5] +
         ".jpg",
       mass: search.mass,
       hair_color: search.hair_color,

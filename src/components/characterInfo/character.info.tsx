@@ -1,19 +1,21 @@
-import { Character } from "../../models/character";
+import { AppContext } from "../../context/app.context";
+import { useContext } from "react";
 
-type PropsType = {
-  item: Character;
-};
+export default function CharacterInfo() {
+  const {
+    characterContext: { currentCharacter },
+  } = useContext(AppContext);
 
-export function CharacterInfo({ item }: PropsType) {
   return (
     <>
       <section>
-        <span>Name: {item.name}</span>
-        <span>Name: {item.name}</span>
-        <span>Name: {item.name}</span>
-        <span>Name: {item.name}</span>
-        <span>Name: {item.name}</span>
-        <span>Name: {item.name}</span>
+        <img src={currentCharacter?.image} alt="" />
+        <span>Name: {currentCharacter?.eye_color}</span>
+        <span>Name: {currentCharacter?.image}</span>
+        <span>Name: {currentCharacter?.name}</span>
+        <span>Name: {currentCharacter?.name}</span>
+        <span>Name: {currentCharacter?.name}</span>
+        <span>Name: {currentCharacter?.name}</span>
       </section>
     </>
   );
