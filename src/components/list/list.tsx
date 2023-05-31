@@ -8,6 +8,7 @@ export default function List() {
   const {
     characterContext: { characters },
   } = useContext(AppContext);
+
   return (
     <ul className={styles.list}>
       {characters.map((item) => (

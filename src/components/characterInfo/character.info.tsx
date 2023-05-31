@@ -1,5 +1,6 @@
 import { AppContext } from "../../context/app.context";
 import { useContext } from "react";
+import styles from "./character.info.module.scss";
 
 export default function CharacterInfo() {
   const {
@@ -8,14 +9,21 @@ export default function CharacterInfo() {
 
   return (
     <>
-      <section>
-        <img src={currentCharacter?.image} alt="" />
-        <span>Name: {currentCharacter?.eye_color}</span>
-        <span>Name: {currentCharacter?.image}</span>
-        <span>Name: {currentCharacter?.name}</span>
-        <span>Name: {currentCharacter?.name}</span>
-        <span>Name: {currentCharacter?.name}</span>
-        <span>Name: {currentCharacter?.name}</span>
+      <section className={styles.characterinfo}>
+        <div>
+          <img src={currentCharacter?.image} alt="" />
+        </div>
+        <div>
+          <span>Name: {currentCharacter?.eye_color}</span>
+          <span>Height: {currentCharacter?.image}</span>
+          <span>Mass: {currentCharacter?.name}</span>
+          <span>Hair Color: {currentCharacter?.name}</span>
+          <span>Eye Color: {currentCharacter?.name}</span>
+          <span>Birth Year: {currentCharacter?.name}</span>
+          <span>Gender: </span>
+          <span>Home World: </span>
+          <span>Films: </span>
+        </div>
       </section>
     </>
   );
