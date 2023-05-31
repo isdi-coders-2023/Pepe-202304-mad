@@ -79,6 +79,7 @@ export function useCharacters() {
     currentCharacter: characterState.currentCharacter,
     next: characterState.next,
     previous: characterState.previous,
+    favoriteCharacters: characterState.favoriteCharacters,
     handleLoad,
     handleAdd,
     handleUpdate,
