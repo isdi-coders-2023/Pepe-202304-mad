@@ -4,7 +4,7 @@ export class characterRepository {
   url: string;
   localUrl: string;
   constructor() {
-    this.url = "https://swapi.dev/api/people/?page2";
+    this.url = "https://swapi.dev/api/people/";
     this.localUrl = "http://localhost:3000/books/characters/";
   }
 
