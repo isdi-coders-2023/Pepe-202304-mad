@@ -5,7 +5,8 @@ export default function NavBar() {
       <nav className={styles.navBar}>
         <div className={styles.createButton}>
           <img
-            className={styles.stromtrooperButton}
+            height={96.63}
+            width={99.69}
             src="buttons.images/create_corasonsito.png"
             alt="lovely stromtrooper"
           />
