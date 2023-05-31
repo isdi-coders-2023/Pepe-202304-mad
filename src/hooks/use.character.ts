@@ -8,6 +8,7 @@ import * as ac from "../reducer/character.actions.creator";
 export function useCharacters() {
   const initialState: CharacterState = {
     characters: [],
+    currentCharacter: null,
   };
 
   const [characterState, dispatch] = useReducer(characterReducer, initialState);
@@ -18,6 +19,11 @@ export function useCharacters() {
     const loadedCharacter = await repo.getAll();
     dispatch(ac.loadCharacterAction(loadedCharacter));
   }, [repo]);
+
+  const handleLoadOneChar = async (character: Character) => {
+    const loadedCharacter = await repo.getCharacter(character.url);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
 
   useEffect(() => {
     handleLoad();
@@ -52,8 +58,10 @@ export function useCharacters() {
 
   return {
     characters: characterState.characters,
+    currentCharacter: characterState.currentCharacter,
     handleAdd,
     handleUpdate,
     handleDelete,
+    handleLoadOneChar,
   };
 }

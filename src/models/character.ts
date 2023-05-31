@@ -1,6 +1,5 @@
 export type Character = {
   id: number;
-  charIndex: string;
   name: string;
   height: string;
   image: string;
