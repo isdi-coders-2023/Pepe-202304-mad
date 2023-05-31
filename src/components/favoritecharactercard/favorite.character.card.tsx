@@ -15,16 +15,16 @@ export function FavoriteCharacterCard({ item }: PropsType) {
 
   const navigate = useNavigate();
 
-  const navigateToCharacterInfo = () => {
+  const navigateToFavoriteCharacterInfo = () => {
     handleLoadOneChar(item);
-    navigate("/character-info");
+    navigate("/favorite-character-info");
   };
 
   return (
     <>
       <li key={item.name} className={styles.characters}>
         <div>
-          <img src={item.image} onClick={navigateToCharacterInfo} />
+          <img src={item.image} onClick={navigateToFavoriteCharacterInfo} />
         </div>
         <span>{item.name}</span>
       </li>

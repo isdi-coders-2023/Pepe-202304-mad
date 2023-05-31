@@ -29,7 +29,7 @@ export default function NavBar() {
               onClick={navigateToFavoriteCharacters}
             />
 
-            <button>FAVORITE</button>
+            <button>FAVORITES</button>
           </div>
         </div>
       </nav>
