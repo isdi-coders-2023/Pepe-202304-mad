@@ -47,6 +47,11 @@ export function useCharacters() {
     handleLoadLocalServer();
   }, [handleLoadLocalServer]);
 
+  const handleLoadOneFavoriteChar = async (character: Character) => {
+    const loadedCharacter = await repo.getFavoriteCharacter(character.id);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
+
   const handleAdd = async (character: Character) => {
     try {
       const newCharacter = await repo.create(character);
@@ -85,5 +90,6 @@ export function useCharacters() {
     handleUpdate,
     handleDelete,
     handleLoadOneChar,
+    handleLoadOneFavoriteChar,
   };
 }

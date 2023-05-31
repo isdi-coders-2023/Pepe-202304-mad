@@ -57,6 +57,26 @@ export class characterRepository {
     return character as Character;
   }
 
+  async getFavoriteCharacter(id: number) {
+    const response = await fetch(`http://localhost:3000/characters/${id}`);
+    const search = await response.json();
+
+    const character: Character = {
+      id: search.id,
+      name: search.name,
+      height: search.height,
+      image: search.image,
+      mass: search.mass,
+      hair_color: search.hair_color,
+      eye_color: search.eye_color,
+      birth_year: search.birth_year,
+      gender: search.gender,
+      homeworld: search.homeworld,
+      url: search.url,
+    };
+    return character as Character;
+  }
+
   async create(item: Character) {
     const response = await fetch(this.localUrl, {
       method: "POST",

@@ -10,13 +10,13 @@ type PropsType = {
 
 export function FavoriteCharacterCard({ item }: PropsType) {
   const {
-    characterContext: { handleLoadOneChar },
+    characterContext: { handleLoadOneFavoriteChar },
   } = useContext(AppContext);
 
   const navigate = useNavigate();
 
   const navigateToFavoriteCharacterInfo = () => {
-    handleLoadOneChar(item);
+    handleLoadOneFavoriteChar(item);
     navigate("/favorite-character-info");
   };
 
