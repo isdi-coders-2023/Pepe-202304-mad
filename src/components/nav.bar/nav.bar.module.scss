@@ -9,6 +9,10 @@
     font-size: 18px;
   }
 
+  .stromtrooperButton {
+    margin-bottom: 11.63px;
+  }
+
   .createButton {
     display: flex;
     flex-direction: column;
@@ -18,22 +22,34 @@
     display: flex;
     flex-direction: column;
   }
-
-  .navRectangle {
+  .separator {
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 196, 0, 0.5);
-    border-radius: 40px;
-    width: 321.12px;
-    height: 41.73px;
-  }
+    width: fit-content;
+    height: fit-content;
 
-  .filterButton {
-    background-color: transparent;
-    border: 0px;
-    color: white;
-    font-size: 18px;
-    padding-left: 5px;
-    margin: 20px;
+    .navRectangle {
+      background-color: rgba(255, 196, 0, 0.5);
+      border-radius: 40px;
+      width: 321.12px;
+      height: 41.73px;
+      align-items: center;
+    }
+
+    .filterButton {
+      background-color: transparent;
+      border: 0px;
+      width: fit-content;
+      color: white;
+      font-size: 18px;
+      padding: 8px;
+    }
+
+    .filterArrow {
+      background-color: #dfac00;
+      border-radius: 40px;
+      margin-left: 116px;
+      margin-top: 5px;
+    }
   }
 }
