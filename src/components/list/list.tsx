@@ -1,4 +1,4 @@
-// import styles from "./list.module.scss";
+import ChangePage from "../change.page/change.page";
 import { useContext } from "react";
 import { AppContext } from "../../context/app.context";
 import { CharacterCard } from "../charactercard/character.card";
@@ -10,10 +10,13 @@ export default function List() {
   } = useContext(AppContext);
 
   return (
-    <ul className={styles.list}>
-      {characters.map((item) => (
-        <CharacterCard item={item} key={item.name}></CharacterCard>
-      ))}
-    </ul>
+    <>
+      <ul className={styles.list}>
+        {characters.map((item) => (
+          <CharacterCard item={item} key={item.name}></CharacterCard>
+        ))}
+      </ul>
+      <ChangePage></ChangePage>
+    </>
   );
 }

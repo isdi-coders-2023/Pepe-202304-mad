@@ -1,4 +1,3 @@
-import ChangePage from "../change.page/change.page";
 import { AppRoutes } from "../app.routes/app.routes";
 
 import GoBack from "../goback/goback";
@@ -12,7 +11,6 @@ export function App() {
       <Header></Header>
       <NavBar></NavBar>
       <AppRoutes></AppRoutes>
-      <ChangePage></ChangePage>
       <GoBack></GoBack>
     </div>
   );
