@@ -12,6 +12,7 @@ export function useCharacters() {
     previous: "",
     currentCharacter: null,
     favoriteCharacters: [],
+    feedbackMessage: false,
   };
 
   const [characterState, dispatch] = useReducer(characterReducer, initialState);
@@ -79,12 +80,20 @@ export function useCharacters() {
     }
   };
 
+  const togglefeedbackMessage = () => {
+    dispatch(ac.togglefeedbackMessageAction());
+    setTimeout(() => {
+      dispatch(ac.togglefeedbackMessageAction());
+    }, 3000);
+  };
+
   return {
     characters: characterState.characters,
     currentCharacter: characterState.currentCharacter,
     next: characterState.next,
     previous: characterState.previous,
     favoriteCharacters: characterState.favoriteCharacters,
+    feedbackMessage: characterState.feedbackMessage,
     handleLoad,
     handleAdd,
     handleUpdate,
@@ -92,5 +101,6 @@ export function useCharacters() {
     handleLoadOneChar,
     handleLoadOneFavoriteChar,
     handleLoadLocalServer,
+    togglefeedbackMessage,
   };
 }

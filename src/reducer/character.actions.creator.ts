@@ -67,3 +67,9 @@ export function updateCharacterAction(payload: Character) {
     payload,
   };
 }
+
+export function togglefeedbackMessageAction(): any {
+  return {
+    type: actionTypes.togglefeedbackMessage,
+  };
+}

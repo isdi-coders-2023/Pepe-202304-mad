@@ -1,19 +1,6 @@
 {
   "characters": [
     {
-      "id": 21,
-      "name": "Palpatine",
-      "height": "170",
-      "image": "https://starwars-visualguide.com/assets/img/characters/21.jpg",
-      "mass": "75",
-      "hair_color": "grey",
-      "eye_color": "yellow",
-      "birth_year": "82BBY",
-      "gender": "male",
-      "homeworld": "Naboo",
-      "url": "https://swapi.dev/api/people/21/"
-    },
-    {
       "id": 5,
       "name": "Leia Organa",
       "height": "150",

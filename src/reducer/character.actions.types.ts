@@ -7,4 +7,5 @@ export const actionTypes = {
   next: "characters@next",
   previous: "characters@previous",
   loadLocal: "characters@loadLocal",
+  togglefeedbackMessage: "characters@togglefeedbackMessage",
 };
