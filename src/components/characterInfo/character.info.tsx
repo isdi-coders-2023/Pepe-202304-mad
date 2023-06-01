@@ -1,6 +1,7 @@
 import { AppContext } from "../../context/app.context";
 import { useContext } from "react";
 import styles from "./character.info.module.scss";
+import ListButtons from "../gobacktolist/gobacktolist";
 
 export default function CharacterInfo() {
   const {
@@ -24,6 +25,7 @@ export default function CharacterInfo() {
           <span>Home World: {currentCharacter?.homeworld}</span>
         </div>
       </section>
+      <ListButtons></ListButtons>
     </>
   );
 }
