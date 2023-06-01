@@ -1,7 +1,7 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AppContext, ContextStructure } from "../../context/app.context";
-import { CharacterCard } from "./character.card";
+import { FavoriteCharacterCard } from "./favorite.character.card";
 import { Character } from "../../models/character";
 
 describe("Given the characterCard component", () => {
@@ -11,10 +11,10 @@ describe("Given the characterCard component", () => {
       url: "https://swapi.dev/api/people/1/",
     } as Character;
 
-    const handleLoadOneChar = jest.fn();
+    const handleLoadOneFavoriteChar = jest.fn();
     const value: ContextStructure = {
       characterContext: {
-        handleLoadOneChar,
+        handleLoadOneFavoriteChar,
       },
     } as unknown as ContextStructure;
 
@@ -22,16 +22,16 @@ describe("Given the characterCard component", () => {
       render(
         <MemoryRouter>
           <AppContext.Provider value={value}>
-            <CharacterCard item={mockCharacter} />
+            <FavoriteCharacterCard item={mockCharacter} />
           </AppContext.Provider>
         </MemoryRouter>
       );
     });
 
-    test("it should call handleLoadOneChar and navigate when image is clicked", () => {
+    test("it should call handleLoadOneFavoriteChar and navigate when image is clicked", () => {
       const image = screen.getByRole("img");
       fireEvent.click(image);
-      expect(handleLoadOneChar).toHaveBeenCalledWith(mockCharacter);
+      expect(handleLoadOneFavoriteChar).toHaveBeenCalledWith(mockCharacter);
     });
   });
 });
