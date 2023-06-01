@@ -6,7 +6,7 @@ import { Character } from "../../models/character";
 
 export default function CharacterInfo() {
   const {
-    characterContext: { currentCharacter },
+    characterContext: { currentCharacter, feedbackMessage },
   } = useContext(AppContext);
 
   const character = currentCharacter as Character;
@@ -29,7 +29,11 @@ export default function CharacterInfo() {
         </div>
       </section>
       <ListButtons item={character}></ListButtons>
-      <div className={styles.feedbackcontainer}>
+      <div
+        className={`${styles.feedbackcontainer} ${
+          feedbackMessage ? styles.visible : ""
+        }`}
+      >
         <p className={styles.feedback}>CHARACTER ADDED TO FAVORITES ❤️</p>
       </div>
     </>

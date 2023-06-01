@@ -8,6 +8,7 @@ export type CharacterState = {
   previous: string | undefined;
   currentCharacter: Character | null;
   favoriteCharacters: Character[];
+  feedbackMessage: boolean;
 };
 
 export const characterReducer = (
@@ -61,6 +62,9 @@ export const characterReducer = (
         ...state,
         characters: state.characters.filter((item) => item.id !== payload),
       };
+
+    case actionTypes.togglefeedbackMessage:
+      return { ...state, feedbackMessage: !state.feedbackMessage };
 
     default:
       return { ...state };

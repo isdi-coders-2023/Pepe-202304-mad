@@ -10,7 +10,7 @@ type PropsType = {
 
 export default function ListButtons({ item }: PropsType) {
   const {
-    characterContext: { handleAdd },
+    characterContext: { handleAdd, togglefeedbackMessage },
   } = useContext(AppContext);
 
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ export default function ListButtons({ item }: PropsType) {
   const handleAddToFavorites = () => {
     if (!item) return;
     handleAdd(item);
+    togglefeedbackMessage();
   };
 
   return (
