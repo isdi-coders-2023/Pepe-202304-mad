@@ -3,9 +3,12 @@ import "@testing-library/jest-dom";
 import List from "./list";
 import { Character } from "../../models/character";
 import { AppContext, ContextStructure } from "../../context/app.context";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Given List component", () => {
-  const characters = [{}] as Character[];
+  const characters = [
+    { name: "Alex", url: "https://swapi.dev/api/people/1/" },
+  ] as Character[];
 
   const value: ContextStructure = {
     characterContext: {
@@ -15,9 +18,11 @@ describe("Given List component", () => {
 
   beforeEach(() => {
     render(
-      <AppContext.Provider value={value}>
-        <List></List>
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={value}>
+          <List></List>
+        </AppContext.Provider>
+      </MemoryRouter>
     );
   });
 
