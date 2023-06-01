@@ -9,18 +9,22 @@ type PropsType = {
 };
 export default function FavoriteListButtons({ item }: PropsType) {
   const {
-    characterContext: { handleDelete },
+    characterContext: { handleDelete, handleLoadLocalServer },
   } = useContext(AppContext);
 
   const navigate = useNavigate();
 
   const handleReturnHome = () => {
+    handleLoadLocalServer();
     navigate("/favorite-character");
   };
 
   const handleRemoveFromFavorites = () => {
     if (!item) return;
     handleDelete(item);
+    handleLoadLocalServer();
+    navigate("/favorite-character");
+    location.reload();
   };
 
   return (
