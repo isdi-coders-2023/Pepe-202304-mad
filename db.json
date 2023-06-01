@@ -12,6 +12,32 @@
       "gender": "male",
       "homeworld": "Naboo",
       "url": "https://swapi.dev/api/people/21/"
+    },
+    {
+      "id": 5,
+      "name": "Leia Organa",
+      "height": "150",
+      "image": "https://starwars-visualguide.com/assets/img/characters/5.jpg",
+      "mass": "49",
+      "hair_color": "brown",
+      "eye_color": "brown",
+      "birth_year": "19BBY",
+      "gender": "female",
+      "homeworld": "Alderaan",
+      "url": "https://swapi.dev/api/people/5/"
+    },
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "height": "172",
+      "image": "https://starwars-visualguide.com/assets/img/characters/1.jpg",
+      "mass": "77",
+      "hair_color": "blond",
+      "eye_color": "blue",
+      "birth_year": "19BBY",
+      "gender": "male",
+      "homeworld": "Tatooine",
+      "url": "https://swapi.dev/api/people/1/"
     }
   ]
 }

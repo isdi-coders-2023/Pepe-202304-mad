@@ -18,3 +18,18 @@
     }
   }
 }
+.feedbackcontainer {
+  position: absolute;
+  top: 50%;
+  display: none;
+  width: auto;
+  z-index: 10;
+  color: white;
+  .feedback {
+    place-self: center;
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid white;
+  }
+}

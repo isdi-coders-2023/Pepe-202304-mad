@@ -12,6 +12,7 @@ export default function FavoriteList() {
   return (
     <>
       <Filter></Filter>
+      <h2 className={styles.title}>FAVORITE CHARACTERS</h2>
       <ul className={styles.list}>
         {favoriteCharacters.map((item) => (
           <FavoriteCharacterCard

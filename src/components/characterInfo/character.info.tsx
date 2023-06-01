@@ -29,6 +29,9 @@ export default function CharacterInfo() {
         </div>
       </section>
       <ListButtons item={character}></ListButtons>
+      <div className={styles.feedbackcontainer}>
+        <p className={styles.feedback}>CHARACTER ADDED TO FAVORITES ❤️</p>
+      </div>
     </>
   );
 }
