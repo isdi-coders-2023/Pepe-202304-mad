@@ -38,6 +38,19 @@
       "gender": "male",
       "homeworld": "Stewjon",
       "url": "https://swapi.dev/api/people/10/"
+    },
+    {
+      "id": 12,
+      "name": "Wilhuff Tarkin",
+      "height": "180",
+      "image": "https://starwars-visualguide.com/assets/img/characters/12.jpg",
+      "mass": "unknown",
+      "hair_color": "auburn, grey",
+      "eye_color": "blue",
+      "birth_year": "64BBY",
+      "gender": "male",
+      "homeworld": "Eriadu",
+      "url": "https://swapi.dev/api/people/12/"
     }
   ]
 }
