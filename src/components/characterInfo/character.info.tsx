@@ -19,7 +19,7 @@ export default function CharacterInfo() {
         </div>
         <div>
           <span>Name: {character?.name}</span>
-          <span>Height: {character?.height} m</span>
+          <span>Height: {character?.height} cm</span>
           <span>Mass: {character?.mass} Kg</span>
           <span>Hair Color: {character?.hair_color}</span>
           <span>Eye Color: {character?.eye_color}</span>
