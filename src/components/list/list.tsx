@@ -13,6 +13,7 @@ export default function List() {
   return (
     <>
       <Filter></Filter>
+      <h2 className={styles.title}>CHARACTERS</h2>
       <ul className={styles.list}>
         {characters.map((item) => (
           <CharacterCard item={item} key={item.name}></CharacterCard>
