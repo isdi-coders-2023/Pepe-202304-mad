@@ -1,10 +1,8 @@
-import Header from "../header/header";
 import styles from "./error.404.module.scss";
 
 export default function Error404() {
   return (
     <>
-      <Header></Header>
       <div className={styles.errorContainer}>
         <img
           className={styles.droidsImage}

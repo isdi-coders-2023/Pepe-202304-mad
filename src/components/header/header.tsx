@@ -24,6 +24,7 @@ export default function Header() {
         width={311}
         height={144}
         onClick={handleReturnHome}
+        role="button"
       />
       <img
         src="/background.images/weirdlightsaber.jpg"
