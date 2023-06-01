@@ -4,14 +4,13 @@ import { ContextStructure, AppContext } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
 import ListButtons from "./gobacktolist";
 import { Character } from "../../models/character";
-
 describe("first", () => {
   describe("first", () => {
-    const item = {} as Character;
+    const item = { id: 1, name: "Alex" } as Character;
 
     const value: ContextStructure = {
       characterContext: {
-        currentCharacter: {},
+        currentCharacter: item,
       },
     } as unknown as ContextStructure;
     beforeEach(() => {
