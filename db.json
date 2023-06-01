@@ -14,19 +14,6 @@
       "url": "https://swapi.dev/api/people/1/"
     },
     {
-      "id": 2,
-      "name": "C-3PO",
-      "height": "167",
-      "image": "https://starwars-visualguide.com/assets/img/characters/2.jpg",
-      "mass": "75",
-      "hair_color": "n/a",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a",
-      "homeworld": "Tatooine",
-      "url": "https://swapi.dev/api/people/2/"
-    },
-    {
       "id": 4,
       "name": "Darth Vader",
       "height": "202",
