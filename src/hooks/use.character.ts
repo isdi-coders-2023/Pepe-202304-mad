@@ -91,5 +91,6 @@ export function useCharacters() {
     handleDelete,
     handleLoadOneChar,
     handleLoadOneFavoriteChar,
+    handleLoadLocalServer,
   };
 }

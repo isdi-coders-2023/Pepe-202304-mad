@@ -1,10 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./header.module.scss";
+import { useContext } from "react";
+import { AppContext } from "../../context/app.context";
 
 export default function Header() {
+  const {
+    characterContext: { handleLoad },
+  } = useContext(AppContext);
+
   const navigate = useNavigate();
 
   const handleReturnHome = () => {
+    handleLoad();
     navigate("/");
   };
 

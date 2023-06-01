@@ -16,7 +16,7 @@ export default function FavoriteList() {
         {favoriteCharacters.map((item) => (
           <FavoriteCharacterCard
             item={item}
-            key={item.name}
+            key={item.id}
           ></FavoriteCharacterCard>
         ))}
       </ul>

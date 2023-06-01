@@ -24,10 +24,6 @@ export function AppRoutes() {
           element={<FavoriteCharacterList></FavoriteCharacterList>}
         ></Route>
         <Route
-          path="/favorite-character"
-          element={<FavoriteCharacterList></FavoriteCharacterList>}
-        ></Route>
-        <Route
           path="/favorite-character-info"
           element={<FavoriteCharacterInfo></FavoriteCharacterInfo>}
         ></Route>
