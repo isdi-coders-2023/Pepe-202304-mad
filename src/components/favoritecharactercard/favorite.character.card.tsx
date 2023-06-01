@@ -22,7 +22,7 @@ export function FavoriteCharacterCard({ item }: PropsType) {
 
   return (
     <>
-      <li key={item.name} className={styles.characters}>
+      <li key={item.id} className={styles.characters}>
         <div>
           <img src={item.image} onClick={navigateToFavoriteCharacterInfo} />
         </div>

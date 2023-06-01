@@ -1,9 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./nav.bar.module.scss";
+import { AppContext } from "../../context/app.context";
+import { useContext } from "react";
 export default function NavBar() {
+  const {
+    characterContext: { handleLoadLocalServer },
+  } = useContext(AppContext);
+
   const navigate = useNavigate();
 
   function navigateToFavoriteCharacters() {
+    handleLoadLocalServer();
     navigate("/favorite-character");
   }
 
