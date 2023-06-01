@@ -1,18 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import List from "./list";
+import List from "./favorite.list";
 import { Character } from "../../models/character";
 import { AppContext, ContextStructure } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
 
 describe("Given List component", () => {
-  const characters = [
+  const favoriteCharacters = [
     { name: "Alex", url: "https://swapi.dev/api/people/1/" },
   ] as Character[];
 
   const value: ContextStructure = {
     characterContext: {
-      characters,
+      favoriteCharacters,
     },
   } as unknown as ContextStructure;
 
