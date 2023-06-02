@@ -3,15 +3,14 @@ import "@testing-library/jest-dom";
 import Header from "./header";
 import { ContextStructure, AppContext } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
-// import userEvent from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 describe("Given header component", () => {
   describe("When it is instantiate", () => {
     const value: ContextStructure = {
       characterContext: {
-        currentCharacter: {
-          handleLoad: jest.fn(),
-        },
+        currentCharacter: {},
+        handleLoad: jest.fn(),
       },
     } as unknown as ContextStructure;
 
@@ -30,10 +29,11 @@ describe("Given header component", () => {
       expect(element).toBeInTheDocument();
     });
 
-    // test("Then the user should hit the returnHome button", async () => {
-    //   const elementCheck = screen.getByRole("button");
-    //   await userEvent.click(elementCheck);
-    //   expect(elementCheck).toBeInTheDocument();
-    //   expect(value.characterContext.handleLoad).toBeCalled();
+    test("Then the user should hit the returnHome button", async () => {
+      const elementCheck = screen.getByRole("button");
+      await userEvent.click(elementCheck);
+      expect(elementCheck).toBeInTheDocument();
+      expect(value.characterContext.handleLoad).toHaveBeenCalled();
+    });
   });
 });
