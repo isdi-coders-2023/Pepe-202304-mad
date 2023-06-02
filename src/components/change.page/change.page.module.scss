@@ -10,4 +10,10 @@
     border: none;
     background: transparent;
   }
+
+  @media only screen and (min-width: 1080px) {
+    position: relative;
+    bottom: 460px;
+    width: 1450px;
+  }
 }
