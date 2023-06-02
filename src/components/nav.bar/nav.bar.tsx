@@ -22,26 +22,34 @@ export default function NavBar() {
     <>
       <nav className={styles.navBar}>
         <div className={styles.buttons}>
-          <div className={styles.button}>
+          <div className={styles.button} onClick={navigateToCreateCharacter}>
             <img
-              height={96.63}
-              width={99.69}
+              height={86.63}
+              width={89.69}
               src="buttons.images/create_corasonsito.png"
               alt="lovely stromtrooper"
-              onClick={navigateToCreateCharacter}
             />
-            <button>CREATE</button>
+            <button>CREATE A CHARACTER</button>
           </div>
-          <div className={styles.button}>
+          <div className={styles.button} onClick={navigateToFavoriteCharacters}>
             <img
-              height={96.63}
-              width={99.69}
+              height={86.63}
+              width={89.69}
               src="buttons.images/R2D2_corasonsito.png"
               alt="lovely Arturito"
-              onClick={navigateToFavoriteCharacters}
             />
 
-            <button>FAVORITES</button>
+            <button>FAVORITE CHARACTERS</button>
+          </div>
+          <div className={styles.button} onClick={navigateToFavoriteCharacters}>
+            <img
+              height={86.63}
+              width={89.69}
+              src="buttons.images/vader_button.png"
+              alt="lovely Arturito"
+            />
+
+            <button>CREATED CHARACTERS</button>
           </div>
         </div>
       </nav>
