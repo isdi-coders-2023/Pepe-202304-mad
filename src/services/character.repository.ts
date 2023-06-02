@@ -20,7 +20,7 @@ export class characterRepository {
   }
 
   async getAllLocal(url: string) {
-    const response = await fetch(url);
+    const response = await fetch(this.localUrl + url);
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
@@ -59,6 +59,28 @@ export class characterRepository {
 
   async getFavoriteCharacter(id: number) {
     const response = await fetch(`http://localhost:3000/characters/${id}`);
+    const search = await response.json();
+
+    const character: Character = {
+      id: search.id,
+      name: search.name,
+      height: search.height,
+      image: search.image,
+      mass: search.mass,
+      hair_color: search.hair_color,
+      eye_color: search.eye_color,
+      birth_year: search.birth_year,
+      gender: search.gender,
+      homeworld: search.homeworld,
+      url: search.url,
+    };
+    return character as Character;
+  }
+
+  async getCreatedCharacter(id: number) {
+    const response = await fetch(
+      `http://localhost:3000/created-characters/${id}`
+    );
     const search = await response.json();
 
     const character: Character = {

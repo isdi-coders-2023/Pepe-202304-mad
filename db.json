@@ -14,5 +14,19 @@
       "url": "https://swapi.dev/api/people/1/"
     }
   ],
-  "created-characters": []
+  "created-characters": [
+    {
+      "id": 1,
+      "name": "Cova",
+      "image": "https://media.licdn.com/dms/image/D5603AQF2wWsndfJiWQ/profile-displayphoto-shrink_800_800/0/1681771756141?e=1691020800&v=beta&t=vyTwHdI9x5AeetfxhwF8lvEFMTHsquvwc4jjCrTtaqI",
+      "height": "156",
+      "mass": "45",
+      "hair_color": "Yellow",
+      "eye_color": "Blue",
+      "birth_year": "1994",
+      "gender": "Female",
+      "homeworld": "Madrid",
+      "url": "its local :("
+    }
+  ]
 }

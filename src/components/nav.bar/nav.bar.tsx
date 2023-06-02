@@ -4,18 +4,26 @@ import { AppContext } from "../../context/app.context";
 import { useContext } from "react";
 export default function NavBar() {
   const {
-    characterContext: { handleLoadLocalServer },
+    characterContext: {
+      handleLoadLocalFavoritesServer,
+      handleLoadLocalCreatedServer,
+    },
   } = useContext(AppContext);
 
   const navigate = useNavigate();
 
+  function navigateToCreateCharacter() {
+    navigate("/create-character");
+  }
+
   function navigateToFavoriteCharacters() {
-    handleLoadLocalServer();
+    handleLoadLocalFavoritesServer();
     navigate("/favorite-character");
   }
 
-  function navigateToCreateCharacter() {
-    navigate("/create-character");
+  function navigateToCreatedCharacters() {
+    handleLoadLocalCreatedServer();
+    navigate("/created-character-list");
   }
 
   return (
@@ -41,12 +49,12 @@ export default function NavBar() {
 
             <button>FAVORITE CHARACTERS</button>
           </div>
-          <div className={styles.button} onClick={navigateToFavoriteCharacters}>
+          <div className={styles.button} onClick={navigateToCreatedCharacters}>
             <img
               height={86.63}
               width={89.69}
               src="buttons.images/vader_button.png"
-              alt="lovely Arturito"
+              alt="lovely Vader"
             />
 
             <button>CREATED CHARACTERS</button>

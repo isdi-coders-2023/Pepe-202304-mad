@@ -7,6 +7,7 @@ export type CharacterState = {
   next: string | undefined;
   previous: string | undefined;
   currentCharacter: Character | null;
+  createdCharacters: Character[];
   favoriteCharacters: Character[];
   feedbackMessage: boolean;
 };
@@ -24,11 +25,18 @@ export const characterReducer = (
         characters: payload,
       };
 
-    case actionTypes.loadLocal:
+    case actionTypes.loadfavorites:
       payload = action.payload as Character[];
       return {
         ...state,
         favoriteCharacters: payload,
+      };
+
+    case actionTypes.loadCreated:
+      payload = action.payload as Character[];
+      return {
+        ...state,
+        createdCharacters: payload,
       };
 
     case actionTypes.next:

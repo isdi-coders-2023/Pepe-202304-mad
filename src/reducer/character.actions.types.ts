@@ -6,6 +6,7 @@ export const actionTypes = {
   loadOne: "characters@loadOne",
   next: "characters@next",
   previous: "characters@previous",
-  loadLocal: "characters@loadLocal",
+  loadfavorites: "characters@loadfavorites",
+  loadCreated: "characters@loadcreated",
   togglefeedbackMessage: "characters@togglefeedbackMessage",
 };

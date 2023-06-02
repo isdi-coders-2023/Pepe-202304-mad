@@ -12,6 +12,7 @@ export function useCharacters() {
     previous: "",
     currentCharacter: null,
     favoriteCharacters: [],
+    createdCharacters: [],
     feedbackMessage: false,
   };
 
@@ -39,20 +40,36 @@ export function useCharacters() {
     handleLoad("https://swapi.dev/api/people/?page=");
   }, [handleLoad]);
 
-  const handleLoadLocalServer = useCallback(
-    async (url = "http://localhost:3000/characters/") => {
+  const handleLoadLocalFavoritesServer = useCallback(
+    async (url = "characters") => {
       const loadedCharacters = await repo.getAllLocal(url);
-      dispatch(ac.loadLocalCharacterAction(loadedCharacters));
+      dispatch(ac.loadFavoritesCharacterAction(loadedCharacters));
+    },
+    [repo]
+  );
+  const handleLoadLocalCreatedServer = useCallback(
+    async (url = "created-characters") => {
+      const loadedCharacters = await repo.getAllLocal(url);
+      dispatch(ac.loadCreatedCharacterAction(loadedCharacters));
     },
     [repo]
   );
 
   useEffect(() => {
-    handleLoadLocalServer("http://localhost:3000/characters/");
-  }, [handleLoadLocalServer]);
+    handleLoadLocalCreatedServer("created-characters");
+  }, [handleLoadLocalCreatedServer]);
+
+  useEffect(() => {
+    handleLoadLocalFavoritesServer("characters");
+  }, [handleLoadLocalFavoritesServer]);
 
   const handleLoadOneFavoriteChar = async (character: Character) => {
     const loadedCharacter = await repo.getFavoriteCharacter(character.id);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
+
+  const handleLoadOneCreatedChar = async (character: Character) => {
+    const loadedCharacter = await repo.getCreatedCharacter(character.id);
     dispatch(ac.loadSingleCharacterAction(loadedCharacter));
   };
 
@@ -95,7 +112,8 @@ export function useCharacters() {
     currentCharacter: characterState.currentCharacter,
     next: characterState.next,
     previous: characterState.previous,
-    favoriteCharacters: characterState.favoriteCharacters,
+    favoritesCharacters: characterState.favoriteCharacters,
+    createdCharacters: characterState.createdCharacters,
     feedbackMessage: characterState.feedbackMessage,
     handleLoad,
     handleAdd,
@@ -103,7 +121,9 @@ export function useCharacters() {
     handleDelete,
     handleLoadOneChar,
     handleLoadOneFavoriteChar,
-    handleLoadLocalServer,
+    handleLoadLocalFavoritesServer,
     togglefeedbackMessage,
+    handleLoadOneCreatedChar,
+    handleLoadLocalCreatedServer,
   };
 }

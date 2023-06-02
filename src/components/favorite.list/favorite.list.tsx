@@ -5,14 +5,14 @@ import styles from "./favorite.list.module.scss";
 
 export default function FavoriteList() {
   const {
-    characterContext: { favoriteCharacters },
+    characterContext: { favoritesCharacters },
   } = useContext(AppContext);
 
   return (
     <>
       <h2 className={styles.title}>FAVORITE CHARACTERS</h2>
       <ul className={styles.list}>
-        {favoriteCharacters.map((item) => (
+        {favoritesCharacters.map((item) => (
           <FavoriteCharacterCard
             item={item}
             key={item.id}

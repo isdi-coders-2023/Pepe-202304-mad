@@ -13,11 +13,20 @@ export function loadCharacterAction(payload: Character[]): CharacterAction {
   };
 }
 
-export function loadLocalCharacterAction(
+export function loadFavoritesCharacterAction(
   payload: Character[]
 ): CharacterAction {
   return {
-    type: actionTypes.loadLocal,
+    type: actionTypes.loadfavorites,
+    payload,
+  };
+}
+
+export function loadCreatedCharacterAction(
+  payload: Character[]
+): CharacterAction {
+  return {
+    type: actionTypes.loadCreated,
     payload,
   };
 }
