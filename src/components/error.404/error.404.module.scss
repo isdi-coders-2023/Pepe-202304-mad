@@ -3,20 +3,52 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  margin-top: 70px;
 
-  .droidsImage {
-    margin-top: 18px;
+  .deathStar {
+    display: none;
   }
 
-  p {
-    font-size: 24px;
-    padding: 4px;
-    margin-bottom: 3px;
-    margin-top: 3px;
+  .hidingParagraphDeathStar {
+    display: none;
+  }
+
+  .hidingParagraphGayRobots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-size: 24px;
+      padding: 4px;
+      margin-bottom: 3px;
+      margin-top: 3px;
+    }
   }
 
   span {
     margin-top: 50px;
     font-size: 36px;
+  }
+
+  @media only screen and (min-width: 1080px) {
+    .droidsImage {
+      display: none;
+    }
+
+    .deathStar {
+      display: flex;
+    }
+
+    .hidingParagraphDeathStar {
+      display: flex;
+      position: relative;
+      top: -250px;
+      font-size: 36px;
+    }
+
+    .hidingParagraphGayRobots {
+      display: none;
+    }
   }
 }
