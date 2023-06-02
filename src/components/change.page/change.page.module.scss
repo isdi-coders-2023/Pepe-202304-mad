@@ -10,10 +10,16 @@
     border: none;
     background: transparent;
   }
+  img {
+    display: none;
 
+    @media only screen and (min-width: 1080px) {
+      display: block;
+    }
+  }
   @media only screen and (min-width: 1080px) {
     position: relative;
-    bottom: 460px;
+    top: -460px;
     width: 1450px;
   }
 }

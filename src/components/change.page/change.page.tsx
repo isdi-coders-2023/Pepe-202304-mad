@@ -16,9 +16,25 @@ export default function ChangePage() {
   }
 
   return (
-    <section className={styles.changepage}>
-      <button onClick={handlePrevious}>Prev</button>
-      <button onClick={handleNext}>Next</button>
-    </section>
+    <>
+      <section className={styles.changepage}>
+        <button onClick={handlePrevious}>
+          <img
+            className={styles.lightsaberButtonNext}
+            src="buttons.images/lightsaberButtonNext.png"
+            alt="lightsaber button next"
+          />
+          Prev
+        </button>
+        <button onClick={handleNext}>
+          <img
+            className={styles.lightsaberButtonBack}
+            src="buttons.images/lightsaberButtonBack.png"
+            alt="lightsaber button back"
+          />{" "}
+          Next
+        </button>
+      </section>
+    </>
   );
 }
