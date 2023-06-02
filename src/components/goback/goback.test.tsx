@@ -2,11 +2,19 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import GoBack from "./goback";
 import userEvent from "@testing-library/user-event";
-
 import { MemoryRouter } from "react-router-dom";
 
 describe("Given the GoBack component", () => {
-  describe("When ", () => {
+  let scrollTopSet: jest.Mock;
+
+  beforeEach(() => {
+    scrollTopSet = jest.fn();
+
+    Object.defineProperty(document.documentElement, "scrollTop", {
+      get: () => 100,
+      set: scrollTopSet,
+    });
+
     render(
       <MemoryRouter>
         <GoBack />
@@ -14,10 +22,11 @@ describe("Given the GoBack component", () => {
     );
   });
 
-  test("Then it should ", async () => {
-    const button = screen.getByRole("button");
+  test("Then it should render and reset the scroll position to 0 when clicked", async () => {
+    const imgButton = screen.getByAltText("arrow button");
 
-    userEvent.click(button);
-    expect(button).toBeInTheDocument();
+    await userEvent.click(imgButton);
+    expect(imgButton).toBeInTheDocument();
+    expect(scrollTopSet).toHaveBeenCalled();
   });
 });
