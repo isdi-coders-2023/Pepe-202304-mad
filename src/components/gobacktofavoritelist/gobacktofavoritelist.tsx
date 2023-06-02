@@ -20,8 +20,9 @@ export default function FavoriteListButtons({ item }: PropsType) {
   };
 
   const handleRemoveFromFavorites = () => {
+    const url = "characters/";
     if (!item) return;
-    handleDelete(item);
+    handleDelete(item, url);
     handleLoadLocalServer();
     navigate("/favorite-character");
     location.reload();

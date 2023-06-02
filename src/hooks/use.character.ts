@@ -40,7 +40,8 @@ export function useCharacters() {
   }, [handleLoad]);
 
   const handleLoadLocalServer = useCallback(async () => {
-    const loadedCharacters = await repo.getAllLocalFavorites();
+    const url = "characters/";
+    const loadedCharacters = await repo.getAllLocalFavorites(url);
     dispatch(ac.loadLocalCharacterAction(loadedCharacters));
   }, [repo]);
 
@@ -53,9 +54,9 @@ export function useCharacters() {
     dispatch(ac.loadSingleCharacterAction(loadedCharacter));
   };
 
-  const handleAdd = async (character: Character) => {
+  const handleAdd = async (character: Character, url: string) => {
     try {
-      const newCharacter = await repo.create(character);
+      const newCharacter = await repo.create(character, url);
       dispatch(ac.createCharacterAction(newCharacter));
     } catch (error) {
       consoleError(error);
@@ -71,9 +72,9 @@ export function useCharacters() {
     }
   };
 
-  const handleDelete = async (character: Character) => {
+  const handleDelete = async (character: Character, url: string) => {
     try {
-      await repo.delete(character.id);
+      await repo.delete(character.id, url);
       dispatch(ac.deleteCharacterAction(character.id));
     } catch (error) {
       consoleError(error);

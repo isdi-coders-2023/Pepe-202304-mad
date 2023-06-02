@@ -20,8 +20,9 @@ export default function ListButtons({ item }: PropsType) {
   };
 
   const handleAddToFavorites = () => {
+    const url = "characters/";
     if (!item) return;
-    handleAdd(item);
+    handleAdd(item, url);
     togglefeedbackMessage();
   };
 

@@ -1,69 +1,32 @@
 {
   "characters": [
     {
-      "id": 5,
-      "name": "Leia Organa",
-      "height": "150",
-      "image": "https://starwars-visualguide.com/assets/img/characters/5.jpg",
-      "mass": "49",
-      "hair_color": "brown",
-      "eye_color": "brown",
-      "birth_year": "19BBY",
-      "gender": "female",
-      "homeworld": "Alderaan",
-      "url": "https://swapi.dev/api/people/5/"
-    },
+      "id": 2,
+      "name": "C-3PO",
+      "height": "167",
+      "image": "https://starwars-visualguide.com/assets/img/characters/2.jpg",
+      "mass": "75",
+      "hair_color": "n/a",
+      "eye_color": "yellow",
+      "birth_year": "112BBY",
+      "gender": "n/a",
+      "homeworld": "Tatooine",
+      "url": "https://swapi.dev/api/people/2/"
+    }
+  ],
+  "created-characters": [
     {
       "id": 1,
-      "name": "Luke Skywalker",
-      "height": "172",
-      "image": "https://starwars-visualguide.com/assets/img/characters/1.jpg",
-      "mass": "77",
-      "hair_color": "blond",
-      "eye_color": "blue",
-      "birth_year": "19BBY",
-      "gender": "male",
-      "homeworld": "Tatooine",
-      "url": "https://swapi.dev/api/people/1/"
-    },
-    {
-      "id": 10,
-      "name": "Obi-Wan Kenobi",
-      "height": "182",
-      "image": "https://starwars-visualguide.com/assets/img/characters/10.jpg",
-      "mass": "77",
-      "hair_color": "auburn, white",
-      "eye_color": "blue-gray",
-      "birth_year": "57BBY",
-      "gender": "male",
-      "homeworld": "Stewjon",
-      "url": "https://swapi.dev/api/people/10/"
-    },
-    {
-      "id": 12,
-      "name": "Wilhuff Tarkin",
-      "height": "180",
-      "image": "https://starwars-visualguide.com/assets/img/characters/12.jpg",
-      "mass": "unknown",
-      "hair_color": "auburn, grey",
-      "eye_color": "blue",
-      "birth_year": "64BBY",
-      "gender": "male",
-      "homeworld": "Eriadu",
-      "url": "https://swapi.dev/api/people/12/"
-    },
-    {
-      "id": 9,
-      "name": "Biggs Darklighter",
-      "height": "183",
-      "image": "https://starwars-visualguide.com/assets/img/characters/9.jpg",
-      "mass": "84",
-      "hair_color": "black",
-      "eye_color": "brown",
-      "birth_year": "24BBY",
-      "gender": "male",
-      "homeworld": "Tatooine",
-      "url": "https://swapi.dev/api/people/9/"
+      "image": "Nitin",
+      "name": "Marco Fratini",
+      "height": "12",
+      "mass": "12",
+      "hair_color": "1231",
+      "eye_color": "123123",
+      "birth_year": "123123",
+      "gender": "123123",
+      "homeworld": "Nitin",
+      "url": "its local :("
     }
   ]
 }

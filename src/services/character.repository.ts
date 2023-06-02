@@ -4,7 +4,7 @@ import { ApiResponse } from "./types";
 export class characterRepository {
   localUrl: string;
   constructor() {
-    this.localUrl = "http://localhost:3000/characters/";
+    this.localUrl = "http://localhost:3000/";
   }
 
   async getAll(url: string) {
@@ -19,8 +19,8 @@ export class characterRepository {
     return characterList as ApiResponse;
   }
 
-  async getAllLocalFavorites() {
-    const response = await fetch(this.localUrl);
+  async getAllLocalFavorites(url: string) {
+    const response = await fetch(this.localUrl + url);
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
@@ -77,8 +77,8 @@ export class characterRepository {
     return character as Character;
   }
 
-  async create(item: Character) {
-    const response = await fetch(this.localUrl, {
+  async create(item: Character, url: string) {
+    const response = await fetch(this.localUrl + url, {
       method: "POST",
       body: JSON.stringify(item),
       headers: { "Content-Type": "application/json" },
@@ -95,8 +95,8 @@ export class characterRepository {
     return response.json();
   }
 
-  async delete(id: Character["id"]) {
-    const response = await fetch(this.localUrl + id, {
+  async delete(id: Character["id"], url: string) {
+    const response = await fetch(this.localUrl + url + id, {
       method: "DELETE",
     });
     return response.ok;

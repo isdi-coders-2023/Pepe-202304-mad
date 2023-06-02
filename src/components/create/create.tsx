@@ -11,22 +11,23 @@ export default function CreateCharacter() {
   const onSubmit = (item: SyntheticEvent) => {
     item.preventDefault();
     const element = item.target as HTMLFormElement;
+    const url = "created-characters/";
 
     const characterToAdd: Character = {
-      id: 0,
-      image: element.image,
-      name: element.name,
-      height: element.height,
-      mass: element.mass,
-      hair_color: element.value,
-      eye_color: element.value,
-      birth_year: element.value,
-      gender: element.value,
-      homeworld: element.value,
+      id: NaN,
+      image: element.image.value,
+      name: element.name.value,
+      height: element.height.value,
+      mass: element.mass.value,
+      hair_color: element.hair_color.value,
+      eye_color: element.eye_color.value,
+      birth_year: element.birth_year.value,
+      gender: element.gender.value,
+      homeworld: element.homeworld.value,
       url: "its local :(",
     };
-
-    handleAdd(characterToAdd);
+    console.log(characterToAdd);
+    handleAdd(characterToAdd, url);
   };
 
   return (
