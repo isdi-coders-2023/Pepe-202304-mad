@@ -10,4 +10,13 @@
   flex-direction: column;
   margin-top: 25px;
   list-style: none;
+
+  @media only screen and (min-width: 1080px) {
+    width: 1500px;
+    height: 830px;
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
 }

@@ -3,11 +3,23 @@
   flex-direction: column;
   align-items: center;
 
-  .try {
+  @media only screen and (min-width: 1080px) {
+    .logo {
+      width: 648px;
+      height: 300px;
+    }
+
+    .rayito {
+      width: 1080px;
+      height: 51px;
+    }
+  }
+
+  .logo {
     position: relative;
   }
 
-  .try::before {
+  .logo::before {
     position: absolute;
     top: 0;
     left: -75%;
