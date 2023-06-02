@@ -6,13 +6,13 @@ import { AppContext, ContextStructure } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
 
 describe("Given List component", () => {
-  const favoriteCharacters = [
+  const favoritesCharacters = [
     { name: "Alex", url: "https://swapi.dev/api/people/1/" },
   ] as Character[];
 
   const value: ContextStructure = {
     characterContext: {
-      favoriteCharacters,
+      favoritesCharacters,
     },
   } as unknown as ContextStructure;
 
