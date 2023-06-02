@@ -33,7 +33,7 @@ export function CharacterCard({ item }: PropsType) {
             onClick={navigateToCharacterInfo}
           />
         </div>
-        <span>{item.name}</span>
+        <span className={styles.names}>{item.name}</span>
       </li>
     </>
   );

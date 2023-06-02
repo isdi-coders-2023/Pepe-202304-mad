@@ -14,10 +14,10 @@ export default function CharacterInfo() {
   return (
     <>
       <section className={styles.characterinfo}>
-        <div>
+        <div className={styles.characterImage}>
           <img src={character?.image} alt="" />
         </div>
-        <div>
+        <div className={styles.characterInfoLetters}>
           <span>Name: {character?.name}</span>
           <span>Height: {character?.height} cm</span>
           <span>Mass: {character?.mass} Kg</span>
@@ -28,6 +28,7 @@ export default function CharacterInfo() {
           <span>Home World: {character?.homeworld}</span>
         </div>
       </section>
+
       <ListButtons item={character}></ListButtons>
       <div
         className={`${styles.feedbackcontainer} ${

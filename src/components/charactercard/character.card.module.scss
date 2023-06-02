@@ -1,6 +1,12 @@
 .characters {
   margin-top: 20px;
 
+  @media only screen and (min-width: 1080px) {
+    .names {
+      height: 120px;
+    }
+  }
+
   div {
     border-radius: 40px;
     display: flex;
@@ -27,8 +33,4 @@ span {
   color: white;
   font-size: 25px;
   padding: 15px;
-
-  @media only screen and (min-width: 1080px) {
-    height: 120px;
-  }
 }
