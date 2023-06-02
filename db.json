@@ -51,6 +51,19 @@
       "gender": "male",
       "homeworld": "Eriadu",
       "url": "https://swapi.dev/api/people/12/"
+    },
+    {
+      "id": 9,
+      "name": "Biggs Darklighter",
+      "height": "183",
+      "image": "https://starwars-visualguide.com/assets/img/characters/9.jpg",
+      "mass": "84",
+      "hair_color": "black",
+      "eye_color": "brown",
+      "birth_year": "24BBY",
+      "gender": "male",
+      "homeworld": "Tatooine",
+      "url": "https://swapi.dev/api/people/9/"
     }
   ]
 }

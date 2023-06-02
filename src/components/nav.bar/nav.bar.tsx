@@ -14,6 +14,10 @@ export default function NavBar() {
     navigate("/favorite-character");
   }
 
+  function navigateToCreateCharacter() {
+    navigate("/create-character");
+  }
+
   return (
     <>
       <nav className={styles.navBar}>
@@ -24,6 +28,7 @@ export default function NavBar() {
               width={99.69}
               src="buttons.images/create_corasonsito.png"
               alt="lovely stromtrooper"
+              onClick={navigateToCreateCharacter}
             />
             <button>CREATE</button>
           </div>

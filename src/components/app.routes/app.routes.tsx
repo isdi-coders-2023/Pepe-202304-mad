@@ -9,6 +9,7 @@ const FavoriteCharacterList = lazy(
 const FavoriteCharacterInfo = lazy(
   () => import("../favoritecardinfo/favorite.card.info")
 );
+const CreateCharacter = lazy(() => import("../create/create"));
 
 export function AppRoutes() {
   return (
@@ -26,6 +27,10 @@ export function AppRoutes() {
         <Route
           path="/favorite-character-info"
           element={<FavoriteCharacterInfo></FavoriteCharacterInfo>}
+        ></Route>
+        <Route
+          path="/create-character"
+          element={<CreateCharacter></CreateCharacter>}
         ></Route>
       </Routes>
     </Suspense>
