@@ -39,14 +39,16 @@ export function useCharacters() {
     handleLoad("https://swapi.dev/api/people/?page=");
   }, [handleLoad]);
 
-  const handleLoadLocalServer = useCallback(async () => {
-    const url = "characters/";
-    const loadedCharacters = await repo.getAllLocalFavorites(url);
-    dispatch(ac.loadLocalCharacterAction(loadedCharacters));
-  }, [repo]);
+  const handleLoadLocalServer = useCallback(
+    async (url = "http://localhost:3000/characters/") => {
+      const loadedCharacters = await repo.getAllLocal(url);
+      dispatch(ac.loadLocalCharacterAction(loadedCharacters));
+    },
+    [repo]
+  );
 
   useEffect(() => {
-    handleLoadLocalServer();
+    handleLoadLocalServer("http://localhost:3000/characters/");
   }, [handleLoadLocalServer]);
 
   const handleLoadOneFavoriteChar = async (character: Character) => {

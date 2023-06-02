@@ -1,4 +1,18 @@
 {
-  "characters": [],
+  "characters": [
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "height": "172",
+      "image": "https://starwars-visualguide.com/assets/img/characters/1.jpg",
+      "mass": "77",
+      "hair_color": "blond",
+      "eye_color": "blue",
+      "birth_year": "19BBY",
+      "gender": "male",
+      "homeworld": "Tatooine",
+      "url": "https://swapi.dev/api/people/1/"
+    }
+  ],
   "created-characters": []
 }

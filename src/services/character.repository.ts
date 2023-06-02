@@ -19,8 +19,8 @@ export class characterRepository {
     return characterList as ApiResponse;
   }
 
-  async getAllLocalFavorites(url: string) {
-    const response = await fetch(this.localUrl + url);
+  async getAllLocal(url: string) {
+    const response = await fetch(url);
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
