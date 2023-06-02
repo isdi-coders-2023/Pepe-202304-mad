@@ -5,7 +5,7 @@ import { Character } from "../../models/character";
 
 export default function CreateCharacter() {
   const {
-    characterContext: { handleAdd },
+    characterContext: { handleAdd, feedbackMessage, togglefeedbackMessage },
   } = useContext(AppContext);
 
   const onSubmit = (item: SyntheticEvent) => {
@@ -15,8 +15,8 @@ export default function CreateCharacter() {
 
     const characterToAdd: Character = {
       id: NaN,
+      name: element.names.value,
       image: element.image.value,
-      name: element.name.value,
       height: element.height.value,
       mass: element.mass.value,
       hair_color: element.hair_color.value,
@@ -26,8 +26,11 @@ export default function CreateCharacter() {
       homeworld: element.homeworld.value,
       url: "its local :(",
     };
-    console.log(characterToAdd);
     handleAdd(characterToAdd, url);
+  };
+
+  const showFeedback = () => {
+    togglefeedbackMessage();
   };
 
   return (
@@ -38,8 +41,8 @@ export default function CreateCharacter() {
           <label htmlFor="image">
             <input type="text" id="image" placeholder="image url" />
           </label>
-          <label htmlFor="name">
-            <input type="text" id="name" placeholder="Name" />
+          <label htmlFor="names">
+            <input type="text" id="names" placeholder="Name" />
           </label>
           <label htmlFor="height">
             <input type="number" id="height" placeholder="Height in cm" />
@@ -64,10 +67,22 @@ export default function CreateCharacter() {
           </label>
         </div>
         <div className={styles.buttonscontainer}>
-          <input type="submit" value="CREATE" className={styles.button} />
+          <input
+            type="submit"
+            value="CREATE"
+            className={styles.button}
+            onClick={showFeedback}
+          />
           <input type="reset" value="RESET" className={styles.button} />
         </div>
       </form>
+      <div
+        className={`${styles.feedbackcontainer} ${
+          feedbackMessage ? styles.visible : ""
+        }`}
+      >
+        <p className={styles.feedback}>CHARACTER CREATED SUCCESSFULLY 😊</p>
+      </div>
     </>
   );
 }

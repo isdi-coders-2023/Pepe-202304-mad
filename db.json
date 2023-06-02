@@ -1,32 +1,4 @@
 {
-  "characters": [
-    {
-      "id": 2,
-      "name": "C-3PO",
-      "height": "167",
-      "image": "https://starwars-visualguide.com/assets/img/characters/2.jpg",
-      "mass": "75",
-      "hair_color": "n/a",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a",
-      "homeworld": "Tatooine",
-      "url": "https://swapi.dev/api/people/2/"
-    }
-  ],
-  "created-characters": [
-    {
-      "id": 1,
-      "image": "Nitin",
-      "name": "Marco Fratini",
-      "height": "12",
-      "mass": "12",
-      "hair_color": "1231",
-      "eye_color": "123123",
-      "birth_year": "123123",
-      "gender": "123123",
-      "homeworld": "Nitin",
-      "url": "its local :("
-    }
-  ]
+  "characters": [],
+  "created-characters": []
 }
