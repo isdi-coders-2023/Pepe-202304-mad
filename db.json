@@ -12,6 +12,19 @@
       "gender": "male",
       "homeworld": "Tatooine",
       "url": "https://swapi.dev/api/people/1/"
+    },
+    {
+      "id": 4,
+      "name": "Darth Vader",
+      "height": "202",
+      "image": "https://starwars-visualguide.com/assets/img/characters/4.jpg",
+      "mass": "136",
+      "hair_color": "none",
+      "eye_color": "yellow",
+      "birth_year": "41.9BBY",
+      "gender": "male",
+      "homeworld": "Tatooine",
+      "url": "https://swapi.dev/api/people/4/"
     }
   ],
   "created-characters": [
