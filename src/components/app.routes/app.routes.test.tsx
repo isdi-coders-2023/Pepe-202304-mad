@@ -15,6 +15,9 @@ jest.mock("../favorite.list/favorite.list", () => MockedComponent3);
 const MockedComponent4 = jest.fn().mockReturnValue(<p>Buenas tardes</p>);
 jest.mock("../favoritecardinfo/favorite.card.info", () => MockedComponent4);
 
+const MockedComponent5 = jest.fn().mockReturnValue(<p>Buenas noches</p>);
+jest.mock("../createdcardinfo/created.card.info", () => MockedComponent5);
+
 describe("Given the AppRoutes component", () => {
   describe("When it is instantiate with a route", () => {
     let element: HTMLElement;
@@ -100,6 +103,30 @@ describe("Given the AppRoutes component", () => {
     test("Then it should ", () => {
       expect(MockedComponent4).toHaveBeenCalled();
       expect(element4).toBeInTheDocument();
+    });
+
+    describe("When it is instantiate with a route", () => {
+      let element5: HTMLElement;
+
+      beforeEach(async () => {
+        await act(async () =>
+          render(
+            <Router
+              initialEntries={["/created-character-info"]}
+              initialIndex={0}
+            >
+              <AppRoutes></AppRoutes>
+            </Router>
+          )
+        );
+
+        element5 = screen.getByText("Buenas noches");
+      });
+
+      test("Then it should ", () => {
+        expect(MockedComponent5).toHaveBeenCalled();
+        expect(element5).toBeInTheDocument();
+      });
     });
   });
 });
