@@ -7,19 +7,17 @@ import { MemoryRouter } from "react-router-dom";
 
 describe("Given the GoBack component", () => {
   describe("When ", () => {
-    beforeEach(() => {
-      render(
-        <MemoryRouter>
-          <GoBack />
-        </MemoryRouter>
-      );
-    });
+    render(
+      <MemoryRouter>
+        <GoBack />
+      </MemoryRouter>
+    );
+  });
 
-    test("Then it should ", async () => {
-      const button = screen.getByRole("button");
+  test("Then it should ", async () => {
+    const button = screen.getByRole("button");
 
-      userEvent.click(button);
-      expect(button).toBeInTheDocument();
-    });
+    userEvent.click(button);
+    expect(button).toBeInTheDocument();
   });
 });
