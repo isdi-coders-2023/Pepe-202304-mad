@@ -12,6 +12,7 @@ export function useCharacters() {
     previous: "",
     currentCharacter: null,
     favoriteCharacters: [],
+    createdCharacters: [],
     feedbackMessage: false,
   };
 
@@ -39,23 +40,42 @@ export function useCharacters() {
     handleLoad("https://swapi.dev/api/people/?page=");
   }, [handleLoad]);
 
-  const handleLoadLocalServer = useCallback(async () => {
-    const loadedCharacters = await repo.getAllLocalFavorites();
-    dispatch(ac.loadLocalCharacterAction(loadedCharacters));
-  }, [repo]);
+  const handleLoadLocalFavoritesServer = useCallback(
+    async (url = "characters") => {
+      const loadedCharacters = await repo.getAllLocal(url);
+      dispatch(ac.loadFavoritesCharacterAction(loadedCharacters));
+    },
+    [repo]
+  );
+  const handleLoadLocalCreatedServer = useCallback(
+    async (url = "created-characters") => {
+      const loadedCharacters = await repo.getAllLocal(url);
+      dispatch(ac.loadCreatedCharacterAction(loadedCharacters));
+    },
+    [repo]
+  );
 
   useEffect(() => {
-    handleLoadLocalServer();
-  }, [handleLoadLocalServer]);
+    handleLoadLocalCreatedServer("created-characters");
+  }, [handleLoadLocalCreatedServer]);
+
+  useEffect(() => {
+    handleLoadLocalFavoritesServer("characters");
+  }, [handleLoadLocalFavoritesServer]);
 
   const handleLoadOneFavoriteChar = async (character: Character) => {
     const loadedCharacter = await repo.getFavoriteCharacter(character.id);
     dispatch(ac.loadSingleCharacterAction(loadedCharacter));
   };
 
-  const handleAdd = async (character: Character) => {
+  const handleLoadOneCreatedChar = async (character: Character) => {
+    const loadedCharacter = await repo.getCreatedCharacter(character.id);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
+
+  const handleAdd = async (character: Character, url: string) => {
     try {
-      const newCharacter = await repo.create(character);
+      const newCharacter = await repo.create(character, url);
       dispatch(ac.createCharacterAction(newCharacter));
     } catch (error) {
       consoleError(error);
@@ -71,9 +91,9 @@ export function useCharacters() {
     }
   };
 
-  const handleDelete = async (character: Character) => {
+  const handleDelete = async (character: Character, url: string) => {
     try {
-      await repo.delete(character.id);
+      await repo.delete(character.id, url);
       dispatch(ac.deleteCharacterAction(character.id));
     } catch (error) {
       consoleError(error);
@@ -92,7 +112,8 @@ export function useCharacters() {
     currentCharacter: characterState.currentCharacter,
     next: characterState.next,
     previous: characterState.previous,
-    favoriteCharacters: characterState.favoriteCharacters,
+    favoritesCharacters: characterState.favoriteCharacters,
+    createdCharacters: characterState.createdCharacters,
     feedbackMessage: characterState.feedbackMessage,
     handleLoad,
     handleAdd,
@@ -100,7 +121,9 @@ export function useCharacters() {
     handleDelete,
     handleLoadOneChar,
     handleLoadOneFavoriteChar,
-    handleLoadLocalServer,
+    handleLoadLocalFavoritesServer,
     togglefeedbackMessage,
+    handleLoadOneCreatedChar,
+    handleLoadLocalCreatedServer,
   };
 }
