@@ -25,6 +25,19 @@
       "gender": "male",
       "homeworld": "Tatooine",
       "url": "https://swapi.dev/api/people/11/"
+    },
+    {
+      "id": 16,
+      "name": "Jabba Desilijic Tiure",
+      "height": "175",
+      "image": "https://starwars-visualguide.com/assets/img/characters/16.jpg",
+      "mass": "1,358",
+      "hair_color": "n/a",
+      "eye_color": "orange",
+      "birth_year": "600BBY",
+      "gender": "hermaphrodite",
+      "homeworld": "Nal Hutta",
+      "url": "https://swapi.dev/api/people/16/"
     }
   ],
   "created-characters": [

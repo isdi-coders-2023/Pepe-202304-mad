@@ -1,19 +1,26 @@
+import { SyntheticEvent, useContext } from "react";
 import styles from "./filter.module.scss";
-export default function filter() {
+import { AppContext } from "../../context/app.context";
+
+export default function SearchBar() {
+  const {
+    characterContext: { handleLoad },
+  } = useContext(AppContext);
+
+  const onSubmmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    const search = e.target as HTMLFormElement;
+    const searchName = search.names.value;
+    const url = "https://swapi.dev/api/people/?search=" + searchName;
+    handleLoad(url);
+  };
+
   return (
-    <div className={styles.filter}>
-      <div className={styles.navRectangle}>
-        <select className={styles.filterButton}>
-          <option value="">FILTER</option>
-        </select>
-        <img
-          className={styles.filterArrow}
-          src="buttons.images/Vector_down_arrow_link.svg.png"
-          alt="arrow button"
-          width={54.73}
-          height={41.73}
-        />
-      </div>
+    <div className={styles.searchContainer}>
+      <form onSubmit={onSubmmit}>
+        <input type="text" placeholder="Search here..." id="names" />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
