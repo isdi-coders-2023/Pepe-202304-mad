@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <img
-        className={styles.logo}
+        className={styles.try}
         src="/background.images/Star-Wars-Logo.png"
         alt="Logo Star Wars"
         width={311}
@@ -27,7 +27,6 @@ export default function Header() {
         role="button"
       />
       <img
-        className={styles.rayito}
         src="/background.images/weirdlightsaber.jpg"
         alt="blue saber"
         width={311}

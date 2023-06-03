@@ -15,6 +15,3 @@ export function App() {
     </div>
   );
 }
-
-//import Error404 from "../error.404/error.404";
-//<Error404></Error404>
