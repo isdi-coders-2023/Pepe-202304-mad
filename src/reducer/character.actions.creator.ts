@@ -3,7 +3,7 @@ import { actionTypes } from "./character.actions.types";
 
 export type CharacterAction = {
   type: string;
-  payload: Character[] | Character | number | string | undefined;
+  payload?: Character[] | Character | number | string | undefined;
 };
 
 export function loadCharacterAction(payload: Character[]): CharacterAction {
@@ -77,7 +77,7 @@ export function updateCharacterAction(payload: Character) {
   };
 }
 
-export function togglefeedbackMessageAction(): any {
+export function togglefeedbackMessageAction() {
   return {
     type: actionTypes.togglefeedbackMessage,
   };
