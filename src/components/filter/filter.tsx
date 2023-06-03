@@ -18,7 +18,7 @@ export default function SearchBar() {
   return (
     <div className={styles.searchContainer}>
       <form onSubmit={onSubmmit}>
-        <input type="text" placeholder="Search here..." id="names" />
+        <input type="text" placeholder="Search characters..." id="names" />
         <button type="submit">Submit</button>
       </form>
     </div>
