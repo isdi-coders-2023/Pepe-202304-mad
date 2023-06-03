@@ -2,7 +2,7 @@ import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { ContextStructure, AppContext } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
-import ListButtons from "./gobacktolist";
+import ListButtons from "./gobacktocreatedlist";
 import { Character } from "../../models/character";
 import userEvent from "@testing-library/user-event";
 describe("first", () => {
@@ -12,8 +12,8 @@ describe("first", () => {
     const value: ContextStructure = {
       characterContext: {
         currentCharacter: item,
-        handleAdd: jest.fn(),
-        togglefeedbackMessage: jest.fn(),
+        handleDelete: jest.fn(),
+        handleLoadLocalCreatedServer: jest.fn(),
       },
     } as unknown as ContextStructure;
     beforeEach(() => {
@@ -36,11 +36,12 @@ describe("first", () => {
       const elementCheck = screen.getAllByRole("button");
       await userEvent.click(elementCheck[0]);
       await userEvent.click(elementCheck[1]);
-      expect(value.characterContext.handleAdd).toHaveBeenCalled();
-      expect(value.characterContext.togglefeedbackMessage).toHaveBeenCalled();
+      expect(value.characterContext.handleDelete).toHaveBeenCalled();
+      expect(
+        value.characterContext.handleLoadLocalCreatedServer
+      ).toHaveBeenCalled();
     });
   });
-
   describe("When given an item that is undefined", () => {
     const item = undefined as unknown as Character;
 
