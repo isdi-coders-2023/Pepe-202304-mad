@@ -2,18 +2,18 @@ import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { ContextStructure, AppContext } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
-import ListButtons from "./gobacktolist";
+import ListButtons from "./gobacktofavoritelist";
 import { Character } from "../../models/character";
 import userEvent from "@testing-library/user-event";
-describe("first", () => {
+describe("Given the ", () => {
   describe("first", () => {
     const item = { id: 1, name: "Alex" } as Character;
 
     const value: ContextStructure = {
       characterContext: {
         currentCharacter: item,
-        handleAdd: jest.fn(),
-        togglefeedbackMessage: jest.fn(),
+        handleDelete: jest.fn(),
+        handleLoadLocalFavoritesServer: jest.fn(),
       },
     } as unknown as ContextStructure;
     beforeEach(() => {
@@ -32,12 +32,14 @@ describe("first", () => {
       expect(element[1]).toBeInTheDocument();
     });
 
-    test("Then it should fire handleAdd and togglefeedback function ", async () => {
+    test("Then it should fire handlenext function ", async () => {
       const elementCheck = screen.getAllByRole("button");
       await userEvent.click(elementCheck[0]);
       await userEvent.click(elementCheck[1]);
-      expect(value.characterContext.handleAdd).toHaveBeenCalled();
-      expect(value.characterContext.togglefeedbackMessage).toHaveBeenCalled();
+      expect(value.characterContext.handleDelete).toHaveBeenCalled();
+      expect(
+        value.characterContext.handleLoadLocalFavoritesServer
+      ).toHaveBeenCalled();
     });
   });
 
