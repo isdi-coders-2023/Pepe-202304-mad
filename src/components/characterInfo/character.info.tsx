@@ -14,26 +14,18 @@ export default function CharacterInfo() {
   return (
     <>
       <section className={styles.characterinfo}>
-        <div className={styles.parent}>
-          <img
-            className={styles.rectangleBig}
-            src="background.images/Rectangle23.png"
-            alt="lightsaber button back"
-          />
-          <div className={styles.characterImage}>
-            <img src={character?.image} alt="" />
-          </div>
-
-          <div className={styles.characterInfoLetters}>
-            <span>Name: {character?.name}</span>
-            <span>Height: {character?.height} cm</span>
-            <span>Mass: {character?.mass} Kg</span>
-            <span>Hair Color: {character?.hair_color}</span>
-            <span>Eye Color: {character?.eye_color}</span>
-            <span>Birth Year: {character?.birth_year}</span>
-            <span>Gender: {character?.gender}</span>
-            <span>Home World: {character?.homeworld}</span>
-          </div>
+        <div>
+          <img src={character?.image} alt="" />
+        </div>
+        <div>
+          <span>Name: {character?.name}</span>
+          <span>Height: {character?.height} cm</span>
+          <span>Mass: {character?.mass} Kg</span>
+          <span>Hair Color: {character?.hair_color}</span>
+          <span>Eye Color: {character?.eye_color}</span>
+          <span>Birth Year: {character?.birth_year}</span>
+          <span>Gender: {character?.gender}</span>
+          <span>Home World: {character?.homeworld}</span>
         </div>
       </section>
 
