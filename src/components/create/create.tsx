@@ -34,7 +34,7 @@ export default function CreateCharacter() {
   return (
     <>
       <h2>Create your own character</h2>
-      <form onSubmit={onSubmit}>
+      <form data-testid="create-character-form" onSubmit={onSubmit}>
         <div className={styles.inputscontainer}>
           <label htmlFor="image">
             <input type="text" id="image" placeholder="image url" required />

@@ -11,6 +11,9 @@ const mockCharacter: Character = {
   url: "url",
 } as Character;
 
+characterRepository.prototype.create = jest.fn().mockRejectedValue(new Error());
+characterRepository.prototype.delete = jest.fn().mockRejectedValue(new Error());
+
 characterRepository.prototype.getAll = jest
   .fn()
   .mockResolvedValue([mockCharacter]);
@@ -85,5 +88,19 @@ describe("Given the hook useCharacters", () => {
       await userEvent.click(elements[3]);
       expect(characterRepository.prototype.getCharacter).toHaveBeenCalled();
     });
+
+    // test("Then it should create a character", async () => {
+    //   await userEvent.click(elements[1]);
+    //   expect(
+    //     characterRepository.prototype.create as jest.Mock
+    //   ).toHaveBeenCalled();
+    // });
+
+    // test("Then it should delete a character", async () => {
+    //   await userEvent.click(elements[2]);
+    //   expect(
+    //     characterRepository.prototype.delete as jest.Mock
+    //   ).toHaveBeenCalled();
+    // });
   });
 });
