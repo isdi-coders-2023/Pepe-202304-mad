@@ -48,10 +48,17 @@ export default function CreateCharacter() {
               id="height"
               placeholder="Height in cm"
               required
+              min="1"
             />
           </label>
           <label htmlFor="mass">
-            <input type="number" id="mass" placeholder="Mass in kg" required />
+            <input
+              type="number"
+              id="mass"
+              placeholder="Mass in kg"
+              required
+              min="1"
+            />
           </label>
           <label htmlFor="hair_color">
             <input
