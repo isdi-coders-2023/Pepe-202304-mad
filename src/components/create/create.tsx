@@ -27,10 +27,8 @@ export default function CreateCharacter() {
       url: "its local :(",
     };
     handleAdd(characterToAdd, url);
-  };
-
-  const showFeedback = () => {
     togglefeedbackMessage();
+    element.reset();
   };
 
   return (
@@ -39,40 +37,60 @@ export default function CreateCharacter() {
       <form onSubmit={onSubmit}>
         <div className={styles.inputscontainer}>
           <label htmlFor="image">
-            <input type="text" id="image" placeholder="image url" />
+            <input type="text" id="image" placeholder="image url" required />
           </label>
           <label htmlFor="names">
             <input type="text" id="names" placeholder="Name" />
           </label>
           <label htmlFor="height">
-            <input type="number" id="height" placeholder="Height in cm" />
+            <input
+              type="number"
+              id="height"
+              placeholder="Height in cm"
+              required
+            />
           </label>
           <label htmlFor="mass">
-            <input type="number" id="mass" placeholder="Mass in kg" />
+            <input type="number" id="mass" placeholder="Mass in kg" required />
           </label>
           <label htmlFor="hair_color">
-            <input type="text" id="hair_color" placeholder="Hair Color" />
+            <input
+              type="text"
+              id="hair_color"
+              placeholder="Hair Color"
+              required
+            />
           </label>
           <label htmlFor="eye_color">
-            <input type="text" id="eye_color" placeholder="Eye Color" />
+            <input
+              type="text"
+              id="eye_color"
+              placeholder="Eye Color"
+              required
+            />
           </label>
           <label htmlFor="birth_year">
-            <input type="text" id="birth_year" placeholder="Birth Year" />
+            <input
+              type="text"
+              id="birth_year"
+              placeholder="Birth Year"
+              required
+            />
           </label>
           <label htmlFor="gender">
-            <input type="text" id="gender" placeholder="Gender" />
+            <input type="text" id="gender" placeholder="Gender" required />
           </label>
           <label htmlFor="homeworld">
-            <input type="text" id="homeworld" placeholder="Home World" />
+            <input
+              type="text"
+              id="homeworld"
+              placeholder="Home World"
+              required
+            />
           </label>
         </div>
         <div className={styles.buttonscontainer}>
-          <input
-            type="submit"
-            value="CREATE"
-            className={styles.button}
-            onClick={showFeedback}
-          />
+          <input type="submit" value="CREATE" className={styles.button} />
           <input type="reset" value="RESET" className={styles.button} />
         </div>
       </form>
