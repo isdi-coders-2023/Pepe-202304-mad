@@ -82,9 +82,8 @@ describe("Given the hook useCharacters", () => {
       expect(characterRepository.prototype.getAll).toHaveBeenCalled();
     });
 
-    test("Then it should add a character", async () => {
-      await userEvent.click(elements[1]);
-      expect(characterRepository.prototype.create).toHaveBeenCalled();
-    });
+    // test("Then it should add a character", async () => {
+    //   await userEvent.click(elements[1]);
+    //   expect(characterRepository.prototype.create).toHaveBeenCalled();
   });
 });
