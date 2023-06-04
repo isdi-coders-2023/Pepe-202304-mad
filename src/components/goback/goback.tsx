@@ -7,7 +7,7 @@ export default function GoBack() {
 
   return (
     <div className={styles.goback}>
-      <button className="goback-button">GO BACK</button>
+      <button className="goback-button">GO BACK UP</button>
       <img
         src="buttons.images/Vector_down_arrow_link.svg.png"
         alt="arrow button"
