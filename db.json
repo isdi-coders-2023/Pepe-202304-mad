@@ -53,6 +53,19 @@
       "gender": "Female",
       "homeworld": "Madrid",
       "url": "its local :("
+    },
+    {
+      "id": 2,
+      "name": "Nitin",
+      "image": "https://media.licdn.com/dms/image/C4E03AQHXJooyDFwp2g/profile-displayphoto-shrink_800_800/0/1627821060902?e=1691020800&v=beta&t=SwGAV5kqrJA7-VyjV5TRvbhWDRiKo2GqR04T6V7Igtk",
+      "height": "190",
+      "mass": "100",
+      "hair_color": "Negro",
+      "eye_color": "Azul",
+      "birth_year": "1989",
+      "gender": "Agender",
+      "homeworld": "Canarias",
+      "url": "its local :("
     }
   ]
 }
