@@ -31,15 +31,6 @@ export function useCharacters() {
     [repo]
   );
 
-  const handleLoadOneChar = async (character: Character) => {
-    const loadedCharacter = await repo.getCharacter(character.url);
-    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
-  };
-
-  useEffect(() => {
-    handleLoad("https://swapi.dev/api/people/?page=");
-  }, [handleLoad]);
-
   const handleLoadLocalFavoritesServer = useCallback(
     async (url = "characters") => {
       const loadedCharacters = await repo.getAllLocal(url);
@@ -47,6 +38,7 @@ export function useCharacters() {
     },
     [repo]
   );
+
   const handleLoadLocalCreatedServer = useCallback(
     async (url = "created-characters") => {
       const loadedCharacters = await repo.getAllLocal(url);
@@ -56,12 +48,21 @@ export function useCharacters() {
   );
 
   useEffect(() => {
+    handleLoad("https://swapi.dev/api/people/?page=");
+  }, [handleLoad]);
+
+  useEffect(() => {
     handleLoadLocalCreatedServer("created-characters");
   }, [handleLoadLocalCreatedServer]);
 
   useEffect(() => {
     handleLoadLocalFavoritesServer("characters");
   }, [handleLoadLocalFavoritesServer]);
+
+  const handleLoadOneChar = async (character: Character) => {
+    const loadedCharacter = await repo.getCharacter(character.url);
+    dispatch(ac.loadSingleCharacterAction(loadedCharacter));
+  };
 
   const handleLoadOneFavoriteChar = async (character: Character) => {
     const loadedCharacter = await repo.getFavoriteCharacter(character.id);
@@ -77,15 +78,6 @@ export function useCharacters() {
     try {
       const newCharacter = await repo.create(character, url);
       dispatch(ac.createCharacterAction(newCharacter));
-    } catch (error) {
-      consoleError(error);
-    }
-  };
-
-  const handleUpdate = async (character: Character) => {
-    try {
-      const updatedCharacter = await repo.update(character.id, character);
-      dispatch(ac.updateCharacterAction(updatedCharacter));
     } catch (error) {
       consoleError(error);
     }
@@ -117,7 +109,6 @@ export function useCharacters() {
     feedbackMessage: characterState.feedbackMessage,
     handleLoad,
     handleAdd,
-    handleUpdate,
     handleDelete,
     handleLoadOneChar,
     handleLoadOneFavoriteChar,

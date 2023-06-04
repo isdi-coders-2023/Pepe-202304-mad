@@ -11,27 +11,22 @@ const mockCharacter: Character = {
   url: "url",
 } as Character;
 
-characterRepository.prototype.getAll = jest.fn();
-characterRepository.prototype.getAllLocal = jest.fn();
+characterRepository.prototype.getAll = jest
+  .fn()
+  .mockResolvedValue([mockCharacter]);
+characterRepository.prototype.getAllLocal = jest
+  .fn()
+  .mockResolvedValue([mockCharacter]);
 characterRepository.prototype.getCharacter = jest.fn();
 characterRepository.prototype.create = jest
   .fn()
   .mockResolvedValue(mockCharacter);
-characterRepository.prototype.update = jest.fn();
 characterRepository.prototype.delete = jest.fn();
-
-(characterRepository.prototype.getAll as jest.Mock).mockResolvedValue([
-  mockCharacter,
-]);
-(characterRepository.prototype.getAllLocal as jest.Mock).mockResolvedValue([
-  mockCharacter,
-]);
 
 function TestComponent() {
   const {
     handleLoad,
     handleAdd,
-    handleUpdate,
     handleDelete,
     handleLoadOneChar,
     handleLoadLocalFavoritesServer,
@@ -45,7 +40,6 @@ function TestComponent() {
     <>
       <button onClick={() => handleLoad()}>Load</button>
       <button onClick={() => handleAdd(mockCharacter, "url")}>Add</button>
-      <button onClick={() => handleUpdate(mockCharacter)}>Update</button>
       <button onClick={() => handleDelete(mockCharacter, "url")}>Delete</button>
       <button onClick={() => handleLoadOneChar(mockCharacter)}>
         Load One Char
@@ -82,8 +76,14 @@ describe("Given the hook useCharacters", () => {
       expect(characterRepository.prototype.getAll).toHaveBeenCalled();
     });
 
-    // test("Then it should add a character", async () => {
-    //   await userEvent.click(elements[1]);
-    //   expect(characterRepository.prototype.create).toHaveBeenCalled();
+    test("Then it should load local characters", async () => {
+      await userEvent.click(elements[5]);
+      expect(characterRepository.prototype.getAllLocal).toHaveBeenCalled();
+    });
+
+    test("Then it should load a single character", async () => {
+      await userEvent.click(elements[3]);
+      expect(characterRepository.prototype.getCharacter).toHaveBeenCalled();
+    });
   });
 });
