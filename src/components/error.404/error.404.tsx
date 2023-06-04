@@ -26,9 +26,6 @@ export default function Error404() {
           <p>These aren't the</p>
           <p>Doids you're</p>
           <p>looking for...</p>
-
-          <span>404Error</span>
-          <span>page not found</span>
         </div>
       </div>
     </>

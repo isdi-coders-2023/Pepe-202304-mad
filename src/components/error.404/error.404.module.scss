@@ -30,25 +30,4 @@
     margin-top: 50px;
     font-size: 36px;
   }
-
-  @media only screen and (min-width: 1080px) {
-    .droidsImage {
-      display: none;
-    }
-
-    .deathStar {
-      display: flex;
-    }
-
-    .hidingParagraphDeathStar {
-      display: flex;
-      position: relative;
-      top: -250px;
-      font-size: 36px;
-    }
-
-    .hidingParagraphGayRobots {
-      display: none;
-    }
-  }
 }
