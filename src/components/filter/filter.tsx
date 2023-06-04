@@ -7,25 +7,22 @@ export default function SearchBar() {
     characterContext: { handleLoad },
   } = useContext(AppContext);
 
-  const onSubmmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    const search = e.target as HTMLFormElement;
-    const searchName = search.names.value;
+  const onInputChange = (e: SyntheticEvent) => {
+    const target = e.target as HTMLInputElement;
+    const searchName = target.value;
     const url = "https://swapi.dev/api/people/?search=" + searchName;
     handleLoad(url);
   };
 
   return (
     <div className={styles.searchContainer}>
-      <form onSubmit={onSubmmit}>
-        <input
-          type="text"
-          placeholder="Search characters..."
-          name="names"
-          id="names"
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <input
+        type="text"
+        placeholder="Search characters..."
+        name="names"
+        id="names"
+        onChange={onInputChange}
+      />
     </div>
   );
 }

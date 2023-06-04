@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Filter from "./filter";
+import SearchBar from "./filter";
 import { ContextStructure, AppContext } from "../../context/app.context";
 import { MemoryRouter } from "react-router-dom";
-// import userEvent from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 describe("Given search component", () => {
-  describe("When it is instantiate", () => {
+  describe("When it is instantiated", () => {
     const mockHandleLoad = jest.fn();
     const value: ContextStructure = {
       characterContext: {
@@ -18,7 +18,7 @@ describe("Given search component", () => {
       render(
         <MemoryRouter>
           <AppContext.Provider value={value}>
-            <Filter />
+            <SearchBar />
           </AppContext.Provider>
         </MemoryRouter>
       );
@@ -29,16 +29,14 @@ describe("Given search component", () => {
       expect(element).toBeInTheDocument();
     });
 
-    // test("Then the user should hit the submit button", async () => {
-    //   const inputElement = screen.getByRole("textbox");
-    //   const submitButton = screen.getByRole("button");
+    test("Then it should call handleLoad on input change", async () => {
+      const input = screen.getByRole("textbox");
+      await userEvent.type(input, "Darth Vader");
 
-    //   await userEvent.type(inputElement, "Luke Skywalker");
-    //   userEvent.click(submitButton);
-
-    //   await waitFor(() => {
-    //     expect(mockHandleLoad).toHaveBeenCalled();
-    //   });
-    // });
+      expect(mockHandleLoad).toHaveBeenCalledTimes(11);
+      expect(mockHandleLoad).toHaveBeenCalledWith(
+        "https://swapi.dev/api/people/?search=Darth Vader"
+      );
+    });
   });
 });
